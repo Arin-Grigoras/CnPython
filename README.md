@@ -4,7 +4,7 @@
 
   ## How to contribute
 
-   Just create an issue if you have an idea for a builtin function or create a new pull request if you can also make the code for that.
+   Just create an issue if you have an idea for a builtin function or create a new pull request if you can also write the code for that.
 
   ## License
 
