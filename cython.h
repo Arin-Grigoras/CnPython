@@ -7,6 +7,7 @@
 #include <string.h>
 
 
+/*Converts any decimal value to a binary value*/
 long long bin(long decimal){
         long long bin = 0;
         int rem, i = 1, step = 1;
@@ -22,7 +23,7 @@ long long bin(long decimal){
 
 
 
-
+/*This functions gives a summary of all the functions that are in this project*/
 void help(){
         printf("\n\t\tCYTHON HELP\n\n");
         printf("\n*bin -> bin(decimal) converts a decimal number into binary form\n");
@@ -31,13 +32,13 @@ void help(){
 
 
 
-
-void hex(int n)
+/*Converts any decimal value to a hexadecimal value*/
+void hex(long n)
 {
         char *hexaDeciNum = (char*)malloc(sizeof(char) * 100);
 
         if(!hexaDeciNum){
-                printf("\n\nERROR: Hex() function error\nCouldn't allocate memory\n\n");
+                printf("\n\nERROR: hex() function error\nCouldn't allocate memory\n\n");
                 exit(1);
         }
  
@@ -67,6 +68,48 @@ void hex(int n)
 
 }
 
+
+
+/*Takes as a parameter the prompt for the user and reads the input byte by byte and returns it*/
+char *input(char *str){
+        int bufsize = 100;
+        int position = 0;
+        char *buffer = malloc(sizeof(char) * bufsize);
+        int c;
+
+        if (!buffer) {
+                printf("\n\nERROR: input() function error\nCouldn't alocate memory\n\n");
+                exit(1);
+        }
+
+        printf("%s", str);
+
+        while (1) {
+
+                c = getchar();
+
+                if (c == EOF || c == '\n') {
+                        buffer[position] = '\0';
+                        return buffer;
+                } else {
+                        buffer[position] = c;
+
+                }
+
+                position++;
+
+                if (position >= bufsize) {
+                bufsize += 100;
+                buffer = realloc(buffer, bufsize);
+                        if (!buffer) {
+                                printf("\n\nError: REALLOCATION error\n\n");
+                                exit(EXIT_FAILURE);
+                        }
+                }
+        }
+
+        return buffer; 
+}
 
 
 
