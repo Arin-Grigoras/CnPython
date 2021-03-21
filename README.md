@@ -12,4 +12,4 @@
 
 
   ## Idea
-  	Idea came from @midnqp, make sure to check his repository as well [https://github.com/midnqp/libavoidrepetition-c]
+   Idea came from @midnqp, make sure to check his repository as well [https://github.com/midnqp/libavoidrepetition-c]
