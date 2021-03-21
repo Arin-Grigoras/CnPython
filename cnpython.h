@@ -112,6 +112,31 @@ char *input(char *str){
 }
 
 
+/*Returns the biggest element in an array*/
+double max (double numbers[], int arrlen) {
+	double maxitem = numbers[0];
+	for(int i=1; i<arrlen; i++) {
+		if (numbers[i] > maxitem) {
+			maxitem = numbers[i];
+		}
+	}
+	return maxitem;
+}
+
+
+
+/*Returns the smallest element in an array*/
+double min(double numbers[], int arrlen) {
+	double minitem = numbers[0];
+	for(int i=1; i < arrlen; i++) {
+		if (numbers[i] < minitem) {
+			minitem = numbers[i];
+		}
+	}
+	return minitem;
+}
+
+
 
 
 #endif //CYTHON_H
