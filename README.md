@@ -9,3 +9,7 @@
   ## License
 
    This code is licensed under an unlicensed license. Feel free to use it however you want.
+
+
+  ## Idea
+  	Idea came from @midnqp, make sure to check his repository as well [https://github.com/midnqp/libavoidrepetition-c]
