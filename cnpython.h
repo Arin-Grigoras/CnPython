@@ -69,6 +69,22 @@ void hex(long n)
 }
 
 
+/*Converts any decimal value to an octal value*/
+long oct(long dec){
+        long octalNumber = 0; 
+        int i = 1;
+
+        while (dec != 0){
+                octalNumber += (dec % 8) * i;
+                dec /= 8;
+                i *= 10;
+        }
+
+        return octalNumber;
+}
+
+
+
 
 /*Takes as a parameter the prompt for the user and reads the input byte by byte and returns it*/
 char *input(char *str){
