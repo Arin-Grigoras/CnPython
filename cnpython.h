@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <math.h>
 
 /*Converts any decimal value to a binary value*/
 long long bin(long decimal){
@@ -93,6 +93,20 @@ double pow(double base, double exponent){
 
         return result;
 }
+
+
+
+/*Converts a number to a string*/
+char *str(int number){
+        int size = (int)((ceil(log10(number))+1)*sizeof(char));
+        char *buffer = (char*)malloc(sizeof(size));
+
+        sprintf(buffer, "%d", number);
+
+        return buffer;
+
+}
+
 
 
 
