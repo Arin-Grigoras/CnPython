@@ -61,8 +61,9 @@ long long bin(long decimal){
 
 /*This functions gives a summary of all the functions that are in this project*/
 void help(){
-        printf("\n\t\tCYTHON HELP\n\n");
-        printf("\n*bin -> bin(decimal) converts a decimal number into binary form\n");
+        printf("\n\t\tCNPYTHON HELP\n\n");
+	printf("\ntype -> type(var) returns a value from -1 to 10\n");
+        printf("\nbin -> bin(decimal) converts a decimal number into binary form\n");
         printf("\nhex -> hex(decimal) converts a decimal number into hexadecimal form\n");
 	printf("\noct -> oct(decimal) converts a decimal number into an octal\n");
 	printf("\npow -> pow(base, exponent), multiplies base by itself as many times as the exponent says\n");
