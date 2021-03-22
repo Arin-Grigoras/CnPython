@@ -1,5 +1,7 @@
 # python-in-c
 
+  ![alt text](https://github.com/koreaneggroll/CnPython/blob/main/CnPython.png?raw=true)
+
   Implementing most of pythons builtin functions in C, making it easier to read.
 
   ## How to contribute
