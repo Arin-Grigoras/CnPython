@@ -8,7 +8,7 @@
   	gcc filename.c -o filename -lm
 
   ## Template Code
-  	```c
+  	
 	#include <stdio.h>
 	#include "cnpython.h>
 
@@ -18,7 +18,7 @@
 
 		return 0;
 	}
-	```
+
 
   ## How to contribute
 
