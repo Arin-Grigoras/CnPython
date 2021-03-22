@@ -9,7 +9,7 @@
 #include <stdarg.h>
 
 
-/*Is used to determine the type of a */
+/*Is used to determine the type of a variable */
 enum types{
         TYPE_INT = 0,
         TYPE_CHAR = 1,
@@ -25,6 +25,7 @@ enum types{
         TYPE_UNKNOWN = -1
 };
 
+/*Returns a number from -1 to 10 depending on the variable data type*/
 #define type(X) \
         _Generic(X, \
                         int: TYPE_INT, \
@@ -63,6 +64,18 @@ void help(){
         printf("\n\t\tCYTHON HELP\n\n");
         printf("\n*bin -> bin(decimal) converts a decimal number into binary form\n");
         printf("\nhex -> hex(decimal) converts a decimal number into hexadecimal form\n");
+	printf("\noct -> oct(decimal) converts a decimal number into an octal\n");
+	printf("\npow -> pow(base, exponent), multiplies base by itself as many times as the exponent says\n");
+	printf("\nstr -> str(number) converts from an int to a string\n");
+	printf("\n_int -> _int(string) converts from a string to an int\n");
+	printf("\ninput -> input(prompt) prints out the prompt and takes input from the user\n");
+	printf("\nreverse -> reverse(arr, size) reverses an array\n");
+	printf("\nmin -> min(arr, size) gets the smallest element in an array\n");
+	printf("\nmax -> max(arr, size) gets the biggest element in an array\n");
+	printf("\nprint -> print(format, ...) printf but with the ability to print arrays built in\n");
+	printf("\nsorted -> sorted(arr, size) sorts an array using timsort\n");
+	printf("\nsum -> sum(arr, size) gets the sum of all the element in an array\n");
+
 }
 
 
