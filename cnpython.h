@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <stdarg.h>
 
 /*Converts any decimal value to a binary value*/
 long long bin(long decimal){
@@ -160,6 +161,21 @@ char *input(char *str){
 }
 
 
+
+/*Reverses an int array*/
+int* reversed(int* arr, int size){
+        int *return_arr = calloc(size, sizeof(int));
+        for(int c = size - 1, d = 0; c >= 0; c--, d++){     
+                return_arr[d] = arr[c];
+        }
+
+        return return_arr;
+        
+}
+
+
+
+
 /*Returns the biggest element in an array*/
 double max (double numbers[], int arrlen) {
 	double maxitem = numbers[0];
@@ -251,7 +267,7 @@ void print(char *format, ...){
                                 int *int_arr_to_print = va_arg(argp, int*);
                                 int size = sizeof(int_arr_to_print)/sizeof(int_arr_to_print[0]);
                                 print_int_arr(int_arr_to_print, size);
-                        }else if(*format == 'e'){
+                        }else if(*format == 'e'){ //for double arrays
                                 double *double_arr_to_print = va_arg(argp, double*);
                                 int size = sizeof(double_arr_to_print)/sizeof(double_arr_to_print[0]);
                                 print_double_arr(double_arr_to_print, size);
@@ -272,6 +288,109 @@ void print(char *format, ...){
                         format++;
                 }
                 va_end(argp);   
+}
+
+
+
+
+const int RUN = 32;
+#define MAX(x, y) (((x) > (y)) ? (x) : (y))
+#define MIN(x, y) (((x) < (y)) ? (x) : (y))
+ 
+/*Used in tim sort algorithm*/
+void insertionSort(int arr[], int left, int right)
+{
+    for (int i = left + 1; i <= right; i++)
+    {
+        int temp = arr[i];
+        int j = i - 1;
+        while (j >= left && arr[j] > temp)
+        {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = temp;
+    }
+}
+ 
+/*Merge function is used in the tim sort algorithm*/
+void merge(int arr[], int l, int m, int r){
+    int len1 = m - l + 1, len2 = r - m;
+    int left[len1], right[len2];
+    for (int i = 0; i < len1; i++)
+        left[i] = arr[l + i];
+    for (int i = 0; i < len2; i++)
+        right[i] = arr[m + 1 + i];
+ 
+    int i = 0;
+    int j = 0;
+    int k = l;
+ 
+    while (i < len1 && j < len2)
+    {
+        if (left[i] <= right[j])
+        {
+            arr[k] = left[i];
+            i++;
+        }
+        else
+        {
+            arr[k] = right[j];
+            j++;
+        }
+        k++;
+    }
+ 
+    
+    while (i < len1)
+    {
+        arr[k] = left[i];
+        k++;
+        i++;
+    }
+ 
+
+    while (j < len2)
+    {
+        arr[k] = right[j];
+        k++;
+        j++;
+    }
+}
+ 
+
+/*Tim Sort algorithm*/
+void timSort(int arr[], int n){
+     
+    for (int i = 0; i < n; i+=RUN)
+        insertionSort(arr, i, MIN((i+RUN-1), 
+                                    (n-1)));
+ 
+    for (int size = RUN; size < n; 
+                             size = 2*size)
+    {
+         
+        for (int left = 0; left < n; 
+                             left += 2*size)
+        {
+            int mid = left + size - 1;
+            int right = MIN((left + 2*size - 1), 
+                                            (n-1));
+ 
+
+              if(mid < right)
+                merge(arr, left, mid, right);
+        }
+    }
+}
+
+
+
+/*uses timSort algorithm to sort an array*/
+int* sorted(int *arr, int size){
+	timSort(arr, size);
+
+	return arr;
 }
 
 
