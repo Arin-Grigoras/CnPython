@@ -85,6 +85,13 @@ long oct(long dec){
 
 
 
+/*Converts a string to an integer*/
+int _int(char *str){
+        return atoi(str);
+}
+
+
+
 
 /*Takes as a parameter the prompt for the user and reads the input byte by byte and returns it*/
 char *input(char *str){
