@@ -456,5 +456,12 @@ long sum(int *arr, int size){
 
 
 
+int str_len(char *str){
+	//exists already but decided to put this here cuz why not
+	return strlen(str);
+}
+
+
+
 
 #endif //CYTHON_H
