@@ -84,6 +84,17 @@ long oct(long dec){
 }
 
 
+/*Power function*/
+double pow(double base, double exponent){
+        double result = 1;
+        for(exponent; exponent > 0; exponent--){
+                result *= base;
+        }
+
+        return result;
+}
+
+
 
 /*Converts a string to an integer*/
 int _int(char *str){
