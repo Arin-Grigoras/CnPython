@@ -25,20 +25,20 @@
    Just create an issue if you have an idea for a builtin function or create a new pull request if you can also write the code for that.
 
   ## Implemented functions
-   *type(var),
-   *bin(decimal),
-   *hex(decimal),
-   *oct(decimal),
-   *pow(base, exponent),
-   *str(number),
-   *_int(string),
-   *input(prompt),
-   *reverse(arr, size),
-   *min(arr, size),
-   *max(arr, size),
-   *print(*format),	
-   *sorted(arr, size),
-   *sum(arr, size),
+   * type(var),
+   * bin(decimal),
+   * hex(decimal),
+   * oct(decimal),
+   * pow(base, exponent),
+   * str(number),
+   * _int(string),
+   * input(prompt),
+   * reverse(arr, size),
+   * min(arr, size),
+   * max(arr, size),
+   * print(*format),	
+   * sorted(arr, size),
+   * sum(arr, size),
 
   ## License
 
