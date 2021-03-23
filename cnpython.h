@@ -76,6 +76,8 @@ void help(){
 	printf("\nprint -> print(format, ...) printf but with the ability to print arrays built in\n");
 	printf("\nsorted -> sorted(arr, size) sorts an array using timsort\n");
 	printf("\nsum -> sum(arr, size) gets the sum of all the element in an array\n");
+	printf("\nstr_len -> str_len(str) returns the length of a string\n");
+	printf("\nstr_count -> str_count(str, find) returns how many times a character was found in a string\n");
 
 }
 
