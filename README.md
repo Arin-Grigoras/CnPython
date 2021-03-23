@@ -54,4 +54,6 @@
    Idea came from @midnqp, make sure to check his repository as well [https://github.com/midnqp/libavoidrepetition-c]
 
    ## Contact
-   [button url="https://discord.gg/D2CycEe5S8"]
+   
+   [Official Discord Server](https://discord.gg/PHmZyqgz8A) &nbsp;&nbsp;|&nbsp;&nbsp;  [Instagram](https://www.instagram.com/arngdesignnofficial/)
+   
