@@ -1,8 +1,10 @@
 #include <stdio.h>
-#include "cnpython.h"
+#include "src/cnpython.h"
 
 
 void test_input(){
+	char c;
+	c = getc(stdin);
 	char *test = input("Test: ");
 	print("%s", test);
 }
@@ -17,16 +19,40 @@ void test_print(){
 
 
 
+void test_bin(){
+	int num = 10;
+	long long binary = bin(10);
+
+	printf("%lld", binary);
+}
+
+
+void test_hex(){
+        int num = 10;
+        hex(num);
+}
+
+
+
+void test_oct(){
+        int num = 10;
+        long octal = oct(10);  
+
+        printf("%ld", octal);  
+}
+
 
 
 int main(void){
 	int ch;
-	printf("[1]. test-input\n[2].test-print");
+	printf("[1]. test-input\n[2].test-print\n");
+	printf("[3]. test-bin\n");
 
 	scanf("%d", &ch);
 
 	switch(ch){
 		case 1: test_input(); break;
 		case 2: test_print(); break;
+		case 3: test_bin(); break;
 	}
 }

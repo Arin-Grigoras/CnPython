@@ -3,5 +3,7 @@
 
 
 int main(void){
-    print("Hello world");
+	//my own print function printing a newline at the end by default
+    	print("Hello world");
 }
+

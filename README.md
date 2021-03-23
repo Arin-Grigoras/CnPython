@@ -1,4 +1,4 @@
-# python-in-c
+# CnPython
 
   ![alt text](https://github.com/koreaneggroll/CnPython/blob/main/CnPython.png?raw=true)
 
