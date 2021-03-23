@@ -55,5 +55,5 @@
 
    ## Contact
    
-   [Official Discord Server](http://example.com/) &nbsp;&nbsp;|&nbsp;&nbsp;  [Instagram](https://instagram.com/)
+   [Official Discord Server](https://discord.gg/PHmZyqgz8A) &nbsp;&nbsp;|&nbsp;&nbsp;  [Instagram](https://www.instagram.com/arngdesignnofficial/)
    
