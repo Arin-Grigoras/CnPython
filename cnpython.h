@@ -291,7 +291,7 @@ void print_long_arr(long *arr, int size){
 
 
 
-/*Basically printf but can print arrays as well*/
+/*Basically printf but has array printing built in*/
 void print(char *format, ...){
         va_list argp;
         va_start(argp, format);
@@ -460,6 +460,22 @@ int str_len(char *str){
 	//exists already but decided to put this here cuz why not
 	return strlen(str);
 }
+
+
+/*Counts how many times the program found a character in a given string*/
+int str_count(char *str, char find){
+        
+        int count = 0;
+        
+        for(int i = 0; i < strlen(str); i++){
+                if(str[i] == find){
+                        count++;
+                }
+        }
+
+        return count;
+}
+
 
 
 
