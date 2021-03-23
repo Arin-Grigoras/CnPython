@@ -5,7 +5,7 @@
   Implementing most of pythons builtin functions in C, making it easier to read.
 
   ## Compile
-  	gcc filename.c -o filename -lm
+  	gcc filename.c cnpython.c -o filename -lm
 
   ## Template Code
   	
