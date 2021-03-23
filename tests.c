@@ -16,6 +16,9 @@ void test_print(){
 }
 
 
+
+
+
 int main(void){
 	int ch;
 	printf("[1]. test-input\n[2].test-print");

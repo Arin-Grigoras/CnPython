@@ -36,9 +36,11 @@
    * reverse(arr, size),
    * min(arr, size),
    * max(arr, size),
-   * print(*format),	
+   * print(*format, ...),	
    * sorted(arr, size),
    * sum(arr, size),
+   * str_len(str),
+   * str_count(str, find),
 
   ## License
 
