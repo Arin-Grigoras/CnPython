@@ -47,7 +47,7 @@
 
   ## License
 
-   This code is licensed under an unlicensed license. Feel free to use it however you want.
+   This code is under a MIT license. This means you can do whatever you want with the code but the same license has to be in your project if you want to use this project.
 
 
   ## Idea
