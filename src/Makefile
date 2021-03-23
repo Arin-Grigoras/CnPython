@@ -5,3 +5,4 @@ test: template.c
 
 clear: *.o
 	rm *.o
+
