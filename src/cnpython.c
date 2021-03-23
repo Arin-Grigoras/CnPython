@@ -35,6 +35,7 @@ void help(){
         printf("\nsum -> sum(arr, size) gets the sum of all the element in an array\n");
         printf("\nstr_len -> str_len(str) returns the length of a string\n");
         printf("\nstr_count -> str_count(str, find) returns how many times a character was found in a string\n");
+	printf("\nendswith -> endswith(str, element) returns 0 if the string ends with the specified element\n");
 
 }
 
@@ -446,6 +447,23 @@ int endswith(char *str, char element){
 
         return -1;
 }
+
+
+
+char *join(char *str1, char *str2){
+        char *str3 = (char*)malloc(sizeof(str1) + sizeof(str2));
+
+        if(!str3){
+                printf("\n\nERROR: join() function error\nCouldn't allocate memory\n\n");
+                exit(1);
+        }
+
+        strcpy(str3, str1);
+        strcat(str3, str2);
+
+        return str3;
+}
+
 
 
 

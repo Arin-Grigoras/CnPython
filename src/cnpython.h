@@ -151,4 +151,11 @@ int str_count(char *str, char find);
 /*Returns 0 if the certain string ends with the element provided*/
 int endswith(char *str, char element);
 
+
+/*Joins 2 strings togheter and returns a third string*/
+char *join(char *str1, char *str2);
+
+
+
+
 #endif //CYTHON_H
