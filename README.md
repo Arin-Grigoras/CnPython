@@ -52,3 +52,6 @@
 
   ## Idea
    Idea came from @midnqp, make sure to check his repository as well [https://github.com/midnqp/libavoidrepetition-c]
+
+   ## Contact
+   [button url="https://discord.gg/D2CycEe5S8"]
