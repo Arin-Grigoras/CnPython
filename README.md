@@ -7,7 +7,8 @@
   ## Compile
   	gcc filename.c cnpython.c -o filename -lm
   or
-  	make test
+
+        make test
 
   ## Template Code
   	
