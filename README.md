@@ -44,6 +44,8 @@
    * sum(arr, size),
    * str_len(str),
    * str_count(str, find),
+   * endswith(str, element),
+   * replace(str, find, repl),
 
   ## License
 

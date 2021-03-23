@@ -36,6 +36,7 @@ void help(){
         printf("\nstr_len -> str_len(str) returns the length of a string\n");
         printf("\nstr_count -> str_count(str, find) returns how many times a character was found in a string\n");
 	printf("\nendswith -> endswith(str, element) returns 0 if the string ends with the specified element\n");
+	printf("\nreplace -> replace(str, find, repl) replaces all occurences of a character in a string\n");
 
 }
 
@@ -464,6 +465,27 @@ char *join(char *str1, char *str2){
         return str3;
 }
 
+
+
+char *replace(char *str, char find, char repl){
+        char *ret_string = (char*)malloc(sizeof(str));
+        
+        if(!ret_string){
+                printf("\nERROR: replace() function error\nCouldn't allocate memory\n\n");
+                exit(1);
+        }
+
+        strcpy(ret_string, str);
+
+
+        for(int i = 0; i < strlen(ret_string); i++){
+                if(ret_string[i] == find){
+                        ret_string[i] = repl;
+                }
+        }
+
+        return ret_string;
+}
 
 
 

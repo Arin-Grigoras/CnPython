@@ -156,6 +156,10 @@ int endswith(char *str, char element);
 char *join(char *str1, char *str2);
 
 
+/*Replaces all found occurunces of a character with another character
+ * and returns a new string*/
+char *replace(char *str, char find, char repl);
+
 
 
 #endif //CYTHON_H
