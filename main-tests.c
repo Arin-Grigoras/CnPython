@@ -43,10 +43,23 @@ void test_oct(){
 
 
 
+void test_endswith(){
+	char *str = "hello world";
+
+	if(endswith(str, 'd') == 0){
+		printf("%s ends with 'd'\n", str);
+	}
+	else{
+		printf("lmao no\n");
+	}
+}
+
+
 int main(void){
 	int ch;
-	printf("[1]. test-input\n[2].test-print\n");
+	printf("[1]. test-input\n[2]. test-print\n");
 	printf("[3]. test-bin\n");
+	printf("[4]. test-endswith\n");
 
 	scanf("%d", &ch);
 
@@ -54,5 +67,6 @@ int main(void){
 		case 1: test_input(); break;
 		case 2: test_print(); break;
 		case 3: test_bin(); break;
+		case 4: test_endswith(); break;
 	}
 }

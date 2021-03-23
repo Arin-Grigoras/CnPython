@@ -140,7 +140,7 @@ int* sorted(int *arr, int size);
 long sum(int *arr, int size);
 
 
-
+/*Returns the length of a string*/
 int str_len(char *str);
 
 
@@ -148,5 +148,7 @@ int str_len(char *str);
 int str_count(char *str, char find);
 
 
+/*Returns 0 if the certain string ends with the element provided*/
+int endswith(char *str, char element);
 
 #endif //CYTHON_H

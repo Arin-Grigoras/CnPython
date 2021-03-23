@@ -438,3 +438,14 @@ int str_count(char *str, char find){
 }
 
 
+
+int endswith(char *str, char element){
+        if(str[strlen(str)-1] == element){
+                return 0;
+        }
+
+        return -1;
+}
+
+
+
