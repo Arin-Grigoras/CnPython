@@ -8,7 +8,13 @@
   	gcc filename.c cnpython.c -o filename -lm
   or
 
-     make test
+    make test
+
+  or
+
+    gcc filename.c -o filename.o
+
+  if you are using just one module of the library
 
   ## Template Code
   	
