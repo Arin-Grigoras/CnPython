@@ -489,3 +489,15 @@ char *replace(char *str, char find, char repl){
 
 
 
+int find(char *str, char find){
+        for(int i = 0; i < strlen(str); i++){
+                if(str[i] == find){
+                        return i;
+                }
+        }
+
+        return -1;
+}
+
+
+
