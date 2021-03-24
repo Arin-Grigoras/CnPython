@@ -13,8 +13,9 @@ void test_input(){
 void test_print(){
 	int arr[] = {1, 2};
 	char *str = "hello";
+	char *str_arr[] = {"Hello", "world"};
 	char c = 'c';
-	print("%s %c %t", str, c, arr);
+	print("%s %c %t %r", str, c, arr, str_arr);
 }
 
 

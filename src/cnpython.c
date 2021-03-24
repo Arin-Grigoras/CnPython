@@ -253,6 +253,14 @@ void print_long_arr(long *arr, int size){
 
 
 
+/*Prints a string array*/
+void print_str_arr(char **arr, int size){
+	for(int i = 0; i < size+1; i++){
+		printf("[%s], ", arr[i]);
+	}
+}
+
+
 
 
 /*Basically printf but has array printing built in*/
@@ -287,7 +295,12 @@ void print(char *format, ...){
                                 long *long_arr_to_print = va_arg(argp, long*);
                                 int size = sizeof(long_arr_to_print)/sizeof(long_arr_to_print[0]);
                                 print_long_arr(long_arr_to_print, size);
-                        }
+                        }else if(*format == 'r'){
+				char **str_arr_to_print = va_arg(argp, char**);
+				int size = sizeof(str_arr_to_print)/sizeof(str_arr_to_print[0]);
+
+				print_str_arr(str_arr_to_print, size);
+			}
 
 
                         else {

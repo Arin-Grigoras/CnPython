@@ -109,6 +109,8 @@ void print_double_arr(double *arr, int size);
 /*Prints a long array*/
 void print_long_arr(long *arr, int size);
 
+/*Prints string array*/
+void print_str_arr(char **arr, int size);
 
 /*Basically printf but has array printing built in*/
 void print(char *format, ...);
