@@ -37,6 +37,8 @@ void help(){
         printf("\nstr_count -> str_count(str, find) returns how many times a character was found in a string\n");
 	printf("\nendswith -> endswith(str, element) returns 0 if the string ends with the specified element\n");
 	printf("\nreplace -> replace(str, find, repl) replaces all occurences of a character in a string\n");
+	printf("\nfind -> find(str, element) returns the index of the element if it found it.\n");
+	printf("\nstartswith -> startswith(str, element) returns 0 if it starts with the specified element\n");
 
 }
 
@@ -498,6 +500,16 @@ int find(char *str, char find){
 
         return -1;
 }
+
+
+
+int startswith(char *str, char element){
+        if(str[0] == element){
+                return 0;
+        }
+        return -1;
+}
+
 
 
 

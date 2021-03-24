@@ -46,6 +46,8 @@
    * str_count(str, find),
    * endswith(str, element),
    * replace(str, find, repl),
+   * find(str, find),
+   * startswith(str, element),
 
   ## License
 
