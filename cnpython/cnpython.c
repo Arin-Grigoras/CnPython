@@ -109,6 +109,16 @@ double pow(double base, double exponent){
 
 
 
+int factorial(int n){
+        if(n == 0){
+                return 1;
+        }
+
+        return n * factorial(n - 1);
+}
+
+
+
 /*Converts a number to a string*/
 char *str(int number){
         int size = (int)((ceil(log10(number))+1)*sizeof(char));
