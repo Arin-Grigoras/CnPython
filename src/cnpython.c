@@ -547,3 +547,6 @@ char *read_file(char *filename){
 }
 
 
+char chr(int ascii) {
+    return (char) ascii;
+}
