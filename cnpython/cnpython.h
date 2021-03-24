@@ -62,6 +62,9 @@ long oct(long dec);
 double pow(double base, double exponent);
 
 
+/*Factorial function*/
+int factorial(int n);
+
 
 /*Converts a number to a string*/
 char *str(int number);
