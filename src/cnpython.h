@@ -171,5 +171,7 @@ int find(char *str, char find);
 int startswith(char *str, char element);
 
 
+/*Reads the whole entire file you pass it*/
+char *read_file(char *filename);
 
 #endif //CYTHON_H

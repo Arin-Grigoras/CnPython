@@ -51,7 +51,7 @@
 
   ## License
 
-   This code is under a MIT license. This means you can do whatever you want with the code but the same license has to be in your project if you want to use this project.
+   This code is under a MIT license. This means you can do whatever you want with the code but the same license has to be in your project if you want to use this in your project.
 
 
   ## Idea
