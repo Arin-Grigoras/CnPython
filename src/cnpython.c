@@ -547,11 +547,12 @@ char *read_file(char *filename){
 }
 
 
-<<<<<<< HEAD
+
 int ord(char c) {
     return (int) c;
-=======
+}
+
+
 char chr(int ascii) {
     return (char) ascii;
->>>>>>> 1bbfe807bbd5eb5b1c5dee2a4913ae551f0acc14
 }
