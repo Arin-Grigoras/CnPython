@@ -174,6 +174,14 @@ int startswith(char *str, char element);
 /*Reads the whole entire file you pass it*/
 char *read_file(char *filename);
 
+size_t str_split(char ***array, char *str, const char *del);
+
+/*Prints the splited string*/
+void printSplit(char *str, const char *del);
+
+/*Splits a string and returns an array*/
+char **split(char **array, char *str, const char *del);
+
 
 /* Returns the char for the ASCII code */
 char chr(int ascii);
