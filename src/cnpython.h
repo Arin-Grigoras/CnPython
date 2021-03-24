@@ -174,4 +174,7 @@ int startswith(char *str, char element);
 /*Reads the whole entire file you pass it*/
 char *read_file(char *filename);
 
+/* Returns the char for the ASCII code */
+char chr(int ascii);
+
 #endif //CYTHON_H
