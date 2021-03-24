@@ -48,6 +48,9 @@
    * replace(str, find, repl),
    * find(str, find),
    * startswith(str, element),
+   * str_split(arr, str, del),
+   * printSplit(str, del),
+   * split(arr, str, del)
 
   ## License
 

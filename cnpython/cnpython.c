@@ -39,6 +39,9 @@ void help(){
 	printf("\nreplace -> replace(str, find, repl) replaces all occurences of a character in a string\n");
 	printf("\nfind -> find(str, element) returns the index of the element if it found it.\n");
 	printf("\nstartswith -> startswith(str, element) returns 0 if it starts with the specified element\n");
+        printf("\nstr_split -> str_split(arr, str, del) isn't really useful on it's own\n");
+        printf("\nprintSplit -> printSplit(str, del) prints the array that is created after splitting a string\n");
+        
 
 }
 
