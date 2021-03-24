@@ -177,4 +177,7 @@ char *read_file(char *filename);
 /* Returns the char for the ASCII code */
 char chr(int ascii);
 
+/* Returns the ASCII code for the char */
+int ord(char c);
+
 #endif //CYTHON_H
