@@ -1,12 +1,21 @@
+/*Header guards*/
 #ifndef CYTHON_H
 #define CYTHON_H
 
-
+/*INCLUDES*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <stdarg.h>
+
+
+/*DEFINES*/
+#define and &&
+#define or ||
+#define not !
+#define equal ==
+#define noteq !=
 
 
 /*Is used to determine the type of a variable */
@@ -201,4 +210,5 @@ int rem(int a, int b);
 /*Returns the percentage*/
 double percentage(float p, float n);
 
-#endif //CYTHON_H
+#endif /*CYTHON_H*/
+/*End of header guard*/
