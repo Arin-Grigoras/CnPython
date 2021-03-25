@@ -8,6 +8,7 @@
 #include <string.h>
 #include <math.h>
 #include <stdarg.h>
+#include <stdint.h>
 
 
 /*DEFINES*/
@@ -17,6 +18,43 @@
 #define is ==
 #define isnt !=
 #define in ,
+
+
+
+/*STRUCTS*/
+typedef void* var;
+
+extern var Int;
+extern var String;
+extern var Double;
+extern var Float;
+extern var Char;
+extern var Long;
+
+struct Int{
+    int64_t val;
+};
+
+struct String{
+    char *val;
+};
+
+struct Double{
+    double val;
+};
+
+struct Float{
+    float val;
+};
+
+struct Char{
+    char val;
+};
+
+struct Long{
+    long val;
+};
+
 
 
 /*Is used to determine the type of a variable */
