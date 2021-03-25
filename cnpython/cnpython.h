@@ -14,8 +14,9 @@
 #define and &&
 #define or ||
 #define not !
-#define equal ==
-#define noteq !=
+#define is ==
+#define isnt !=
+#define in ,
 
 
 /*Is used to determine the type of a variable */
