@@ -152,3 +152,8 @@ long sum(int *arr, int size){
 
         return sum;
 }
+
+
+void iappend(int *arr, int value, int size){
+	arr[size] = value;
+}

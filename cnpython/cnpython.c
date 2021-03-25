@@ -637,6 +637,11 @@ double percentage(float p, float n){
 }
 
 
+void iappend(int *arr, int value, int size){
+	arr[size] = value;
+}
+
+
 char chr(int ascii) {
     return (char) ascii;
 }

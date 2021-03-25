@@ -255,5 +255,8 @@ int rem(int a, int b);
 /*Returns the percentage*/
 double percentage(float p, float n);
 
+/*Adds a new value to the end of a string*/
+void iappend(int *arr, int value, int size);
+
 #endif /*CYTHON_H*/
 /*End of header guard*/

@@ -6,14 +6,15 @@
  *	Failed Capitalize function
  * */
 
-char *capitalize(char *str){
+void capitalize(char *str){
+	toupper(str[0]);
 }
 
 int main(void){
 
 	char *str = "hello world";
 
-	str = capitalize(str);
+	
 
 	printf("%s", str);
 }
