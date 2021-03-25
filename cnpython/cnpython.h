@@ -19,6 +19,9 @@
 #define isnt !=
 #define in ,
 
+#define True
+#define False
+
 
 
 /*STRUCTS*/

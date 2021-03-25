@@ -17,7 +17,7 @@ long long bin(long decimal){
 
 
 
-void help(){
+void help(void){
         printf("\n\t\tCNPYTHON HELP\n\n");
         printf("\ntype -> type(var) returns a value from -1 to 10\n");
         printf("\nbin -> bin(decimal) converts a decimal number into binary form\n");

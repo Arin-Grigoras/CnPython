@@ -46,6 +46,14 @@ var hello(){
     print("Hello world");
 }
 
+/*
+Doesn't really work
+*/
+var add(var a, var b){
+    var result = a + b;
+    return result;
+}
+
 int main(void){
-    hello();
+    print("%d", add(1, 2));
 }
