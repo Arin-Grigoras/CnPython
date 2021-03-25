@@ -86,3 +86,14 @@ int factorial(int n){
 
     return n * factorial(n - 1);
 }
+
+
+
+int rem(int a, int b){
+        return a - (a/b*b);
+}
+
+
+double percentage(float p, float n){
+        return p * n / 100;
+}

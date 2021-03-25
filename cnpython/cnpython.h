@@ -195,4 +195,10 @@ int ord(char c);
 /*Returns 0 of the value was found it the specified string*/
 int isin(char *str, char value);
 
+/*Returns the remainder of the division of 2 numbers*/
+int rem(int a, int b);
+
+/*Returns the percentage*/
+double percentage(float p, float n);
+
 #endif //CYTHON_H

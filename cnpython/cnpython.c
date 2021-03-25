@@ -607,9 +607,11 @@ char **split(char **array, char *str, const char *del){
 }
 
 
+
 int ord(char c) {
     return (int) c;
 }
+
 
 
 int isin(char *str, char value){
@@ -620,6 +622,18 @@ int isin(char *str, char value){
     }
 
     return -1;
+}
+
+
+
+int rem(int a, int b){
+        return a - (a/b*b);
+}
+
+
+
+double percentage(float p, float n){
+        return p * n / 100;
 }
 
 
