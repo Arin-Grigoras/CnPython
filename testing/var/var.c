@@ -10,6 +10,8 @@ extern var Double;
 extern var Float;
 extern var Char;
 extern var Long;
+extern var Int_Arr;
+extern var Function;
 
 struct Int{
     int64_t val;
@@ -36,8 +38,14 @@ struct Long{
 };
 
 
+struct Function{
+    var (*func)(var);
+};
+
+var hello(){
+    print("Hello world");
+}
+
 int main(void){
-    var w = 20;
-    var str = "hello";
-    print("%s", str);
+    hello();
 }

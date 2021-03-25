@@ -30,6 +30,7 @@ extern var Double;
 extern var Float;
 extern var Char;
 extern var Long;
+extern var Function;
 
 struct Int{
     int64_t val;
@@ -55,7 +56,9 @@ struct Long{
     long val;
 };
 
-
+struct Function{
+    var (*func)(var);
+};
 
 /*Is used to determine the type of a variable */
 enum types{
