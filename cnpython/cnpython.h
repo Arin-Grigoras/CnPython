@@ -192,4 +192,7 @@ char chr(int ascii);
 /* Returns the ASCII code for the char */
 int ord(char c);
 
+/*Returns 0 of the value was found it the specified string*/
+int isin(char *str, char value);
+
 #endif //CYTHON_H

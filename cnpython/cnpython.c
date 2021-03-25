@@ -612,6 +612,17 @@ int ord(char c) {
 }
 
 
+int isin(char *str, char value){
+    for(int i = 0; i < strlen(str); i++){
+        if(str[0] == value){
+            return 0;
+        }
+    }
+
+    return -1;
+}
+
+
 char chr(int ascii) {
     return (char) ascii;
 }

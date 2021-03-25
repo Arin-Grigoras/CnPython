@@ -1,18 +1,12 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 /*
  *	Failed Capitalize function
  * */
 
 char *capitalize(char *str){
-	char capitalized = str[0];
-	
-	capitalized = toupper(capitalized);
-
-	str[0] = capitalized;
-
-	return str;
 }
 
 int main(void){
