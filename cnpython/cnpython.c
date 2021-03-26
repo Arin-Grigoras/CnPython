@@ -642,6 +642,16 @@ void iappend(int *arr, int value, int size){
 }
 
 
+int *copy(int *arr, int *dest, int size){
+    for(int i = 0; i < size; i++){
+        dest[i] = arr[i];
+    }
+
+    return dest;
+}
+
+
+
 char chr(int ascii) {
     return (char) ascii;
 }

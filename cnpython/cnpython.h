@@ -258,5 +258,9 @@ double percentage(float p, float n);
 /*Adds a new value to the end of a string*/
 void iappend(int *arr, int value, int size);
 
+/*Copies the elements of an array to another array*/
+int *copy(int *arr, int *dest, int size);
+
+
 #endif /*CYTHON_H*/
 /*End of header guard*/

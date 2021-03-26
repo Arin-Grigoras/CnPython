@@ -157,3 +157,12 @@ long sum(int *arr, int size){
 void iappend(int *arr, int value, int size){
 	arr[size] = value;
 }
+
+
+int *copy(int *arr, int *dest, int size){
+    for(int i = 0; i < size; i++){
+        dest[i] = arr[i];
+    }
+
+    return dest;
+}
