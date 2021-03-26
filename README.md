@@ -31,7 +31,8 @@
 
   ## How to contribute
 
-   Just create an issue if you have an idea for a builtin function or create a new pull request if you can also write the code for that.
+   Just create an issue if you have an idea for a builtin function or create a new pull request if you can also write the code for that. When
+I will have more time to spend on this project I will definetly contribute a little bit more.
 
   ## Implemented functions
    * type(var),
