@@ -19,8 +19,8 @@
 #define isnt !=
 #define in ,
 
-#define True
-#define False
+#define True 1
+#define False 0
 
 
 
