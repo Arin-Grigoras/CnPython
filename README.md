@@ -57,6 +57,16 @@
    * str_split(arr, str, del),
    * printSplit(str, del),
    * split(arr, str, del)
+   * chr(ascii)
+   * ord(char)
+   * isin(str, value)
+   * rem(a, b)
+   * percentage(p, n)
+   * iappend(arr, value, size)
+   * copy(arr, dest, size)
+   * arr_count(arr, value, size)
+   * arr_find(arr, value, size)
+   * pop(arr, size)
 
   ## License
 

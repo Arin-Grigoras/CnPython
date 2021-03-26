@@ -41,6 +41,16 @@ void help(void){
 	printf("\nstartswith -> startswith(str, element) returns 0 if it starts with the specified element\n");
         printf("\nstr_split -> str_split(arr, str, del) isn't really useful on it's own\n");
         printf("\nprintSplit -> printSplit(str, del) prints the array that is created after splitting a string\n");
+        printf("\nchr -> chr(ascii) returns the character represented by a number\n");
+        printf("\nord -> ord(char) returns the number represented by a character(opposite of chr)\n");
+        printf("\nisin -> isin(str, value) returns 0 if the value specified was in the array\n");
+        printf("\nrem - > rem(a, b) returns the remainder of a division between 2 numbers\n");
+        printf("\npercentage -> percentage(p, n) returns the percentage\n");
+        printf("\niappend -> iappend(arr, value, size) adds a value at the end of an array\n");
+        printf("\ncopy -> copy(arr, dest, size) copies an array to another array\n");
+        printf("\narr_count -> arr_count(arr, value, size) counts how many times a specified value was found\n");
+        printf("\narr_find -> arr_find(arr, value, size) returns the index of the specified value\n");
+        printf("\npop -> pop(arr, size) pops the last element from the array\n");
         
 
 }
