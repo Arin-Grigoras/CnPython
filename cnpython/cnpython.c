@@ -664,6 +664,17 @@ int arr_count(int *arr, int value, int size){
 }
 
 
+int arr_find(int *arr, int value, int size){
+    for(int i = 0; i < size; i++){
+        if(arr[i] == value){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+
 char chr(int ascii) {
     return (char) ascii;
 }

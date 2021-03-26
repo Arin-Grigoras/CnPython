@@ -265,5 +265,9 @@ int *copy(int *arr, int *dest, int size);
 int arr_count(int *arr, int value, int size);
 
 
+/*Returns the index at which it found a specified value, if it didn't find it, returns -1*/
+int arr_find(int *arr, int value, int size);
+
+
 #endif /*CYTHON_H*/
 /*End of header guard*/
