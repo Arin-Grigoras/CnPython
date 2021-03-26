@@ -261,6 +261,9 @@ void iappend(int *arr, int value, int size);
 /*Copies the elements of an array to another array*/
 int *copy(int *arr, int *dest, int size);
 
+/*Returns how many times a value was found inside an array*/
+int arr_count(int *arr, int value, int size);
+
 
 #endif /*CYTHON_H*/
 /*End of header guard*/

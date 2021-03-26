@@ -651,6 +651,18 @@ int *copy(int *arr, int *dest, int size){
 }
 
 
+int arr_count(int *arr, int value, int size){
+    int count = 0;
+    
+    for(int i = 0; i < size; i++){
+        if(arr[i] == value){
+            count++;
+        }
+    }
+
+    return count;
+}
+
 
 char chr(int ascii) {
     return (char) ascii;
