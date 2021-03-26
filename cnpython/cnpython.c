@@ -675,6 +675,11 @@ int arr_find(int *arr, int value, int size){
 }
 
 
+void pop(int *arr, int size){
+    arr[size-1] = 0;
+}
+
+
 char chr(int ascii) {
     return (char) ascii;
 }

@@ -268,6 +268,8 @@ int arr_count(int *arr, int value, int size);
 /*Returns the index at which it found a specified value, if it didn't find it, returns -1*/
 int arr_find(int *arr, int value, int size);
 
+/*Pops out the last element of an array*/
+void pop(int *arr, int size);
 
 #endif /*CYTHON_H*/
 /*End of header guard*/

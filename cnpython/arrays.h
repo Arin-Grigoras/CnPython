@@ -190,3 +190,8 @@ int arr_find(int *arr, int value, int size){
 
     return -1;
 }
+
+
+void pop(int *arr, int size){
+    arr[size-1] = 0;
+}
