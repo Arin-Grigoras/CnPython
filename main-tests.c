@@ -56,6 +56,11 @@ void test_endswith(){
 }
 
 
+void test_Tuple(){
+	var something = tuple(1, 2, 3)
+}
+
+
 int main(void){
 	int ch;
 	printf("[1]. test-input\n[2]. test-print\n");

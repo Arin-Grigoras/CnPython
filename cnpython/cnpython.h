@@ -8,7 +8,10 @@
 #include <string.h>
 #include <math.h>
 #include <stdarg.h>
+#include <errno.h>
 #include <stdint.h>
+
+//#define tuple(...)
 
 
 /*DEFINES*/
@@ -34,6 +37,7 @@ extern var Float;
 extern var Char;
 extern var Long;
 extern var Function;
+//extern var Tuple;
 
 struct Int{
     int64_t val;
@@ -62,6 +66,11 @@ struct Long{
 struct Function{
     var (*func)(var);
 };
+
+
+/*struct Tuple{
+    const var* val;
+};*/
 
 /*Is used to determine the type of a variable */
 enum types{

@@ -63,7 +63,7 @@ void hex(long n)
         char *hexaDeciNum = (char*)malloc(sizeof(char) * 100);
 
         if(!hexaDeciNum){
-                printf("\n\nERROR: hex() function error\nCouldn't allocate memory\n\n");
+                printf("\n\n%s\n\n", strerror(errno));
                 exit(1);
         }
  
@@ -137,6 +137,11 @@ char *str(int number){
         int size = (int)((ceil(log10(number))+1)*sizeof(char));
         char *buffer = (char*)malloc(sizeof(size));
 
+        if(!buffer){
+                printf("\n\n%s\n\n", strerror(errno));
+                exit(1);
+        }
+
         sprintf(buffer, "%d", number);
 
         return buffer;
@@ -200,6 +205,12 @@ char *input(char *str){
 /*Reverses an int array*/
 int* reversed(int* arr, int size){
         int *return_arr = calloc(size, sizeof(int));
+
+        if(!return_arr){
+                printf("\n\n%s\n\n", strerror(errno));
+                exit(1);
+        }
+
         for(int c = size - 1, d = 0; c >= 0; c--, d++){     
                 return_arr[d] = arr[c];
         }
