@@ -119,6 +119,14 @@ enum types{
         TYPE_UNKNOWN = -1
 };
 
+
+enum Exceptions{
+    AllocationError = 1,
+    ReallocationError = 2,
+    MemoryError = 3,
+};
+
+
 /*Returns a number from -1 to 10 depending on the variable data type*/
 #define type(X) \
         _Generic(X, \
