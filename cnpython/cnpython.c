@@ -33,6 +33,28 @@ long new_Long(long lon){
 
 
 
+void exception(int except){
+        if(except == AllocationError){
+                print("AllocationError");
+                exit(1);
+        }
+        else if(except == ReallocationError){
+                print("ReallocationError");
+                exit(1);
+        }
+        else if(except == MemoryError){
+                print("MemoryError");
+                exit(1);
+        }
+        else if(except == FileOpenError){
+                print("FileOpenError");
+                exit(1);
+        }
+
+}
+
+
+
 long long bin(long decimal){
         long long bin = 0;
         int rem, i = 1, step = 1;
@@ -42,7 +64,7 @@ long long bin(long decimal){
                 bin += rem * i;
                  i *= 10;
          }
-        printf("0b");
+        print("0b");
         return bin;
 }
 
@@ -50,39 +72,39 @@ long long bin(long decimal){
 
 
 void help(void){
-        printf("\n\t\tCNPYTHON HELP\n\n");
-        printf("\ntype -> type(var) returns a value from -1 to 10\n");
-        printf("\nbin -> bin(decimal) converts a decimal number into binary form\n");
-        printf("\nhex -> hex(decimal) converts a decimal number into hexadecimal form\n");
-        printf("\noct -> oct(decimal) converts a decimal number into an octal\n");
-        printf("\npow -> pow(base, exponent), multiplies base by itself as many times as the exponent says\n");
-        printf("\nstr -> str(number) converts from an int to a string\n");
-        printf("\n_int -> _int(string) converts from a string to an int\n");
-        printf("\ninput -> input(prompt) prints out the prompt and takes input from the user\n");
-        printf("\nreverse -> reverse(arr, size) reverses an array\n");
-        printf("\nmin -> min(arr, size) gets the smallest element in an array\n");
-        printf("\nmax -> max(arr, size) gets the biggest element in an array\n");
-        printf("\nprint -> print(format, ...) printf but with the ability to print arrays built in\n");
-        printf("\nsorted -> sorted(arr, size) sorts an array using timsort\n");
-        printf("\nsum -> sum(arr, size) gets the sum of all the element in an array\n");
-        printf("\nstr_len -> str_len(str) returns the length of a string\n");
-        printf("\nstr_count -> str_count(str, find) returns how many times a character was found in a string\n");
-	printf("\nendswith -> endswith(str, element) returns 0 if the string ends with the specified element\n");
-	printf("\nreplace -> replace(str, find, repl) replaces all occurences of a character in a string\n");
-	printf("\nfind -> find(str, element) returns the index of the element if it found it.\n");
-	printf("\nstartswith -> startswith(str, element) returns 0 if it starts with the specified element\n");
-        printf("\nstr_split -> str_split(arr, str, del) isn't really useful on it's own\n");
-        printf("\nprintSplit -> printSplit(str, del) prints the array that is created after splitting a string\n");
-        printf("\nchr -> chr(ascii) returns the character represented by a number\n");
-        printf("\nord -> ord(char) returns the number represented by a character(opposite of chr)\n");
-        printf("\nisin -> isin(str, value) returns 0 if the value specified was in the array\n");
-        printf("\nrem - > rem(a, b) returns the remainder of a division between 2 numbers\n");
-        printf("\npercentage -> percentage(p, n) returns the percentage\n");
-        printf("\niappend -> iappend(arr, value, size) adds a value at the end of an array\n");
-        printf("\ncopy -> copy(arr, dest, size) copies an array to another array\n");
-        printf("\narr_count -> arr_count(arr, value, size) counts how many times a specified value was found\n");
-        printf("\narr_find -> arr_find(arr, value, size) returns the index of the specified value\n");
-        printf("\npop -> pop(arr, size) pops the last element from the array\n");
+        print("\n\t\tCNPYTHON HELP\n\n");
+        print("\ntype -> type(var) returns a value from -1 to 10\n");
+        print("\nbin -> bin(decimal) converts a decimal number into binary form\n");
+        print("\nhex -> hex(decimal) converts a decimal number into hexadecimal form\n");
+        print("\noct -> oct(decimal) converts a decimal number into an octal\n");
+        print("\npow -> pow(base, exponent), multiplies base by itself as many times as the exponent says\n");
+        print("\nstr -> str(number) converts from an int to a string\n");
+        print("\n_int -> _int(string) converts from a string to an int\n");
+        print("\ninput -> input(prompt) prints out the prompt and takes input from the user\n");
+        print("\nreverse -> reverse(arr, size) reverses an array\n");
+        print("\nmin -> min(arr, size) gets the smallest element in an array\n");
+        print("\nmax -> max(arr, size) gets the biggest element in an array\n");
+        print("\nprint -> print(format, ...) printf but with the ability to print arrays built in\n");
+        print("\nsorted -> sorted(arr, size) sorts an array using timsort\n");
+        print("\nsum -> sum(arr, size) gets the sum of all the element in an array\n");
+        print("\nstr_len -> str_len(str) returns the length of a string\n");
+        print("\nstr_count -> str_count(str, find) returns how many times a character was found in a string\n");
+	print("\nendswith -> endswith(str, element) returns 0 if the string ends with the specified element\n");
+	print("\nreplace -> replace(str, find, repl) replaces all occurences of a character in a string\n");
+	print("\nfind -> find(str, element) returns the index of the element if it found it.\n");
+	print("\nstartswith -> startswith(str, element) returns 0 if it starts with the specified element\n");
+        print("\nstr_split -> str_split(arr, str, del) isn't really useful on it's own\n");
+        print("\nprintSplit -> printSplit(str, del) prints the array that is created after splitting a string\n");
+        print("\nchr -> chr(ascii) returns the character represented by a number\n");
+        print("\nord -> ord(char) returns the number represented by a character(opposite of chr)\n");
+        print("\nisin -> isin(str, value) returns 0 if the value specified was in the array\n");
+        print("\nrem - > rem(a, b) returns the remainder of a division between 2 numbers\n");
+        print("\npercentage -> percentage(p, n) returns the percentage\n");
+        print("\niappend -> iappend(arr, value, size) adds a value at the end of an array\n");
+        print("\ncopy -> copy(arr, dest, size) copies an array to another array\n");
+        print("\narr_count -> arr_count(arr, value, size) counts how many times a specified value was found\n");
+        print("\narr_find -> arr_find(arr, value, size) returns the index of the specified value\n");
+        print("\npop -> pop(arr, size) pops the last element from the array\n");
         
 
 }
@@ -95,8 +117,7 @@ void hex(long n)
         char *hexaDeciNum = (char*)malloc(sizeof(char) * 100);
 
         if(!hexaDeciNum){
-                printf("\n\n%s\n\n", strerror(errno));
-                exit(1);
+                exception(AllocationError);
         }
  
         int i = 0;
@@ -117,7 +138,7 @@ void hex(long n)
                         n = n / 16;
                 }
 
-        printf("0x");
+        print("0x");
 
         for(int j = i - 1; j >= 0; j--){
                 printf("%c", hexaDeciNum[j]);
@@ -170,8 +191,7 @@ char *str(int number){
         char *buffer = (char*)malloc(sizeof(size));
 
         if(!buffer){
-                printf("\n\n%s\n\n", strerror(errno));
-                exit(1);
+                exception(AllocationError);
         }
 
         sprintf(buffer, "%d", number);
@@ -199,13 +219,12 @@ char *input(char *str){
         int c;
 
         if (!buffer) {
-                printf("\n\nERROR: input() function error\nCouldn't alocate memory\n\n");
-                exit(1);
+                exception(AllocationError);
         }
 
         printf("%s", str);
 
-        while (1) {
+        while (True) {
 
                 c = getchar();
 
@@ -223,8 +242,7 @@ char *input(char *str){
                 bufsize += 100;
                 buffer = (char*)realloc(buffer, bufsize);
                         if (!buffer) {
-                                printf("\n\nError: REALLOCATION error\n\n");
-                                exit(EXIT_FAILURE);
+                                exception(ReallocationError);
                         }
                 }
         }
@@ -239,8 +257,7 @@ int* reversed(int* arr, int size){
         int *return_arr = calloc(size, sizeof(int));
 
         if(!return_arr){
-                printf("\n\n%s\n\n", strerror(errno));
-                exit(1);
+                exception(AllocationError);
         }
 
         for(int c = size - 1, d = 0; c >= 0; c--, d++){     
@@ -536,8 +553,7 @@ char *join(char *str1, char *str2){
         char *str3 = (char*)malloc(sizeof(str1) + sizeof(str2));
 
         if(!str3){
-                printf("\n\nERROR: join() function error\nCouldn't allocate memory\n\n");
-                exit(1);
+                exception(AllocationError);
         }
 
         strcpy(str3, str1);
@@ -552,8 +568,7 @@ char *replace(char *str, char find, char repl){
         char *ret_string = (char*)malloc(sizeof(str));
         
         if(!ret_string){
-                printf("\nERROR: replace() function error\nCouldn't allocate memory\n\n");
-                exit(1);
+                exception(AllocationError);
         }
 
         strcpy(ret_string, str);
@@ -595,8 +610,7 @@ char *read_file(char *filename){
         FILE *fptr = fopen(filename, "rb");
 
         if(!fptr){
-                printf("\n\nERROR: read_file() function error\nCouldn't open file\n\n");
-                exit(1);
+                exception(FileOpenError);
         }
 
         fseek(fptr, 0, SEEK_END);

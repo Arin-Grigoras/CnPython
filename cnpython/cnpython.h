@@ -124,6 +124,11 @@ enum types{
 #define AllocationError 1
 #define ReallocationError 2
 #define MemoryError 3
+#define ZeroDivisionError 4
+#define FileOpenError 5
+
+
+void exception(int except);
 
 
 /*Returns a number from -1 to 10 depending on the variable data type*/
@@ -141,6 +146,7 @@ enum types{
                         double*: TYPE_DOUBLE_ARR, \
                         float*: TYPE_FLOAT_ARR, \
                         default: TYPE_UNKNOWN   )
+
 
 
 

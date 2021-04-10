@@ -4,6 +4,6 @@
 
 int main(void){
 	//my own print function printing a newline at the end by default
-    	print("Hello world");
+    print("Hello world");
 }
 
