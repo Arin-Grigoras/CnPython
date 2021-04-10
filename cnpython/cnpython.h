@@ -1,3 +1,5 @@
+
+
 /*Header guards*/
 #ifndef CYTHON_H
 #define CYTHON_H
@@ -39,33 +41,62 @@ extern var Long;
 extern var Function;
 //extern var Tuple;
 
+
 struct Int{
-    int64_t val;
+    int val;
 };
+//typedef Int inte;
+
+
 
 struct String{
     char *val;
 };
+//typedef String string;
+
+
 
 struct Double{
     double val;
 };
+//typedef Double dbl;
+
+
 
 struct Float{
     float val;
 };
+//typedef Float flt;
+
+
 
 struct Char{
     char val;
 };
+//typedef Char character;
+
+
 
 struct Long{
     long val;
 };
+//typedef Long lng;
+
+
 
 struct Function{
     var (*func)(var);
 };
+
+
+/*New datatypes*/
+int new_Int(int integer);
+char *new_String(char *str);
+double new_Double(double dou);
+float new_Float(float flot);
+char new_Char(char chr);
+long new_Long(long lon);
+
 
 
 /*struct Tuple{
@@ -103,6 +134,9 @@ enum types{
                         double*: TYPE_DOUBLE_ARR, \
                         float*: TYPE_FLOAT_ARR, \
                         default: TYPE_UNKNOWN   )
+
+
+
 
 
 

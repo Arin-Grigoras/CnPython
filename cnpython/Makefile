@@ -1,5 +1,5 @@
 #insert your own filename here
-test: ../template.c
+test: ./template.c
 	gcc ../template.c cnpython.c -o ./template.o -lm
 
 

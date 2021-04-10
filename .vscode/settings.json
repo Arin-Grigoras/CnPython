@@ -3,6 +3,7 @@
         "ctype.h": "c",
         "stdint.h": "c",
         "print.h": "c",
-        "cnpython.h": "c"
+        "cnpython.h": "c",
+        "stdio.h": "c"
     }
 }

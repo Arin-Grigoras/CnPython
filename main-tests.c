@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../cnpython/cnpython.h"
+#include "./cnpython/cnpython.h"
 
 
 void test_input(){
@@ -56,8 +56,16 @@ void test_endswith(){
 }
 
 
-void test_Tuple(){
-	var something = tuple(1, 2, 3)
+void test_new_Int(){
+	var age = new_Int(20);
+	var str = new_String("Hello world");
+	
+
+	print("%d", age);
+	print("%s", str);
+
+
+	
 }
 
 
@@ -66,6 +74,8 @@ int main(void){
 	printf("[1]. test-input\n[2]. test-print\n");
 	printf("[3]. test-bin\n");
 	printf("[4]. test-endswith\n");
+	printf("[5]. test-new-int\n");
+
 
 	scanf("%d", &ch);
 
@@ -74,5 +84,6 @@ int main(void){
 		case 2: test_print(); break;
 		case 3: test_bin(); break;
 		case 4: test_endswith(); break;
+		case 5: test_new_Int(); break;
 	}
 }
