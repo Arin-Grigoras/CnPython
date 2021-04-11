@@ -36,19 +36,19 @@ long new_Long(long lon){
 void raise_exception(int except){
         if(except == AllocationError){
                 print("AllocationError");
-                exit(1);
+                exit(AllocationError);
         }
         else if(except == ReallocationError){
                 print("ReallocationError");
-                exit(1);
+                exit(ReallocationError);
         }
         else if(except == MemoryError){
                 print("MemoryError");
-                exit(1);
+                exit(MemoryError);
         }
         else if(except == FileOpenError){
                 print("FileOpenError");
-                exit(1);
+                exit(FileOpenError);
         }
 
 }
