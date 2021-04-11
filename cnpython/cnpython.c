@@ -144,6 +144,8 @@ void hex(long n)
                 printf("%c", hexaDeciNum[j]);
         }
 
+        free(hexaDeciNum);
+
 }
 
 
@@ -617,7 +619,12 @@ char *read_file(char *filename){
         long fptr_size = ftell(fptr);
         fseek(fptr, 0, SEEK_SET);
 
-        char *buffer = malloc(fptr_size + 1);
+        char *buffer = (char*)malloc(fptr_size + 1);
+
+        if(!buffer){
+                raise_exception(AllocationError);
+        }
+
         fread(buffer, 1, fptr_size, fptr);
         fclose(fptr);
 
@@ -636,6 +643,11 @@ size_t str_split(char ***array, char *str, const char *del) {
 
     	while(token != NULL) {
         	*array = realloc(*array, sizeof(char *) * (i + 1));
+
+                if(!array){
+                        raise_exception(ReallocationError);
+                }
+
 		(*array)[i++] = token;
         	token = strtok(NULL, del);
     	}
@@ -666,6 +678,11 @@ char **split(char **array, char *str, const char *del){
 
     	while(token != NULL) {
         	*array = realloc(*array, sizeof(char *) * (i + 1));
+
+                if(!array){
+                        raise_exception(ReallocationError);
+                }
+
         	(*array)[i++] = token;
         	token = strtok(NULL, del);
     	}
