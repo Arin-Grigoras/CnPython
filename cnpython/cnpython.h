@@ -136,7 +136,7 @@ enum types{
 #define FileOpenError 5
 
 
-void exception(int except);
+void exception(int except, char *file, int line);
 
 
 /*Returns a number from -1 to 10 depending on the variable data type*/

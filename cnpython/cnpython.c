@@ -33,21 +33,21 @@ long new_Long(long lon){
 
 
 
-void raise_exception(int except){
+void raise_exception(int except, char *file, int line){
         if(except == AllocationError){
-                print("AllocationError");
+                print("AllocationError: %s %d", file, line);
                 exit(AllocationError);
         }
         else if(except == ReallocationError){
-                print("ReallocationError");
+                print("ReallocationError %s %d", file, line);
                 exit(ReallocationError);
         }
         else if(except == MemoryError){
-                print("MemoryError");
+                print("MemoryError %s %d", file, line);
                 exit(MemoryError);
         }
         else if(except == FileOpenError){
-                print("FileOpenError");
+                print("FileOpenError %s %d", file, line);
                 exit(FileOpenError);
         }
 
@@ -117,7 +117,7 @@ void hex(long n)
         char *hexaDeciNum = (char*)malloc(sizeof(char) * 100);
 
         if(!hexaDeciNum){
-                raise_exception(AllocationError);
+                raise_exception(AllocationError, __FILE__, __LINE__);
         }
  
         int i = 0;
@@ -193,7 +193,7 @@ char *str(int number){
         char *buffer = (char*)malloc(sizeof(size));
 
         if(!buffer){
-                raise_exception(AllocationError);
+                raise_exception(AllocationError, __FILE__, __LINE__);
         }
 
         sprintf(buffer, "%d", number);
@@ -221,7 +221,7 @@ char *input(char *str){
         int c;
 
         if (!buffer) {
-                raise_exception(AllocationError);
+                raise_exception(AllocationError, __FILE__, __LINE__);
         }
 
         printf("%s", str);
@@ -244,7 +244,7 @@ char *input(char *str){
                 bufsize += 100;
                 buffer = (char*)realloc(buffer, bufsize);
                         if (!buffer) {
-                                raise_exception(ReallocationError);
+                                raise_exception(ReallocationError, __FILE__, __LINE__);
                         }
                 }
         }
@@ -259,7 +259,7 @@ int* reversed(int* arr, int size){
         int *return_arr = calloc(size, sizeof(int));
 
         if(!return_arr){
-                raise_exception(AllocationError);
+                raise_exception(AllocationError, __FILE__, __LINE__);
         }
 
         for(int c = size - 1, d = 0; c >= 0; c--, d++){     
@@ -555,7 +555,7 @@ char *join(char *str1, char *str2){
         char *str3 = (char*)malloc(sizeof(str1) + sizeof(str2));
 
         if(!str3){
-                raise_exception(AllocationError);
+                raise_exception(AllocationError, __FILE__, __LINE__);
         }
 
         strcpy(str3, str1);
@@ -570,7 +570,7 @@ char *replace(char *str, char find, char repl){
         char *ret_string = (char*)malloc(sizeof(str));
         
         if(!ret_string){
-                raise_exception(AllocationError);
+                raise_exception(AllocationError, __FILE__, __LINE__);
         }
 
         strcpy(ret_string, str);
@@ -612,7 +612,7 @@ char *read_file(char *filename){
         FILE *fptr = fopen(filename, "rb");
 
         if(!fptr){
-                raise_exception(FileOpenError);
+                raise_exception(FileOpenError, __FILE__, __LINE__);
         }
 
         fseek(fptr, 0, SEEK_END);
@@ -622,7 +622,7 @@ char *read_file(char *filename){
         char *buffer = (char*)malloc(fptr_size + 1);
 
         if(!buffer){
-                raise_exception(AllocationError);
+                raise_exception(AllocationError, __FILE__, __LINE__);
         }
 
         fread(buffer, 1, fptr_size, fptr);
@@ -645,7 +645,7 @@ size_t str_split(char ***array, char *str, const char *del) {
         	*array = realloc(*array, sizeof(char *) * (i + 1));
 
                 if(!array){
-                        raise_exception(ReallocationError);
+                        raise_exception(ReallocationError, __FILE__, __LINE__);
                 }
 
 		(*array)[i++] = token;
@@ -680,7 +680,7 @@ char **split(char **array, char *str, const char *del){
         	*array = realloc(*array, sizeof(char *) * (i + 1));
 
                 if(!array){
-                        raise_exception(ReallocationError);
+                        raise_exception(ReallocationError, __FILE__, __LINE__);
                 }
 
         	(*array)[i++] = token;
