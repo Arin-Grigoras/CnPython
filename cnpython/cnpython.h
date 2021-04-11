@@ -23,9 +23,13 @@
 #define is ==
 #define isnt !=
 #define in ,
+#define elif else if
+
 
 #define True 1
 #define False 0
+#define None ((void*)0) //basically NULL
+
 
 
 
