@@ -33,7 +33,7 @@ long new_Long(long lon){
 
 
 
-void exception(int except){
+void raise_raise_exception(int except){
         if(except == AllocationError){
                 print("AllocationError");
                 exit(1);
@@ -117,7 +117,7 @@ void hex(long n)
         char *hexaDeciNum = (char*)malloc(sizeof(char) * 100);
 
         if(!hexaDeciNum){
-                exception(AllocationError);
+                raise_raise_exception(AllocationError);
         }
  
         int i = 0;
@@ -191,7 +191,7 @@ char *str(int number){
         char *buffer = (char*)malloc(sizeof(size));
 
         if(!buffer){
-                exception(AllocationError);
+                raise_exception(AllocationError);
         }
 
         sprintf(buffer, "%d", number);
@@ -219,7 +219,7 @@ char *input(char *str){
         int c;
 
         if (!buffer) {
-                exception(AllocationError);
+                raise_exception(AllocationError);
         }
 
         printf("%s", str);
@@ -242,7 +242,7 @@ char *input(char *str){
                 bufsize += 100;
                 buffer = (char*)realloc(buffer, bufsize);
                         if (!buffer) {
-                                exception(ReallocationError);
+                                raise_exception(ReallocationError);
                         }
                 }
         }
@@ -257,7 +257,7 @@ int* reversed(int* arr, int size){
         int *return_arr = calloc(size, sizeof(int));
 
         if(!return_arr){
-                exception(AllocationError);
+                raise_exception(AllocationError);
         }
 
         for(int c = size - 1, d = 0; c >= 0; c--, d++){     
@@ -553,7 +553,7 @@ char *join(char *str1, char *str2){
         char *str3 = (char*)malloc(sizeof(str1) + sizeof(str2));
 
         if(!str3){
-                exception(AllocationError);
+                raise_exception(AllocationError);
         }
 
         strcpy(str3, str1);
@@ -568,7 +568,7 @@ char *replace(char *str, char find, char repl){
         char *ret_string = (char*)malloc(sizeof(str));
         
         if(!ret_string){
-                exception(AllocationError);
+                raise_exception(AllocationError);
         }
 
         strcpy(ret_string, str);
@@ -610,7 +610,7 @@ char *read_file(char *filename){
         FILE *fptr = fopen(filename, "rb");
 
         if(!fptr){
-                exception(FileOpenError);
+                raise_exception(FileOpenError);
         }
 
         fseek(fptr, 0, SEEK_END);
