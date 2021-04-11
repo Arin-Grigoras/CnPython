@@ -31,6 +31,10 @@
 #define None ((void*)0) //basically NULL
 
 
+//Really bad class definition but howdy, it works
+#define class struct
+
+
 
 
 /*STRUCTS*/
