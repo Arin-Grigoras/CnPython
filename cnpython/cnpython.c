@@ -33,7 +33,7 @@ long new_Long(long lon){
 
 
 
-void raise_raise_exception(int except){
+void raise_exception(int except){
         if(except == AllocationError){
                 print("AllocationError");
                 exit(1);
@@ -117,7 +117,7 @@ void hex(long n)
         char *hexaDeciNum = (char*)malloc(sizeof(char) * 100);
 
         if(!hexaDeciNum){
-                raise_raise_exception(AllocationError);
+                raise_exception(AllocationError);
         }
  
         int i = 0;
