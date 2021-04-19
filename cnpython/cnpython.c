@@ -211,7 +211,7 @@ int _int(char *str){
 }
 
 
-int bool(int n){
+int _bool(int n){
         if(n == 0){
                 return False;
         }
