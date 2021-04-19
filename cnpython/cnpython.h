@@ -177,7 +177,7 @@ long oct(long dec);
 
 
 /*Power function*/
-double pow(double base, double exponent);
+double power(double base, double exponent);
 
 
 /*Factorial function*/
@@ -195,7 +195,7 @@ int _int(char *str);
 
 
 /*Converts a number into a boolean*/
-int bool(int n);
+int _bool(int n);
 
 
 
