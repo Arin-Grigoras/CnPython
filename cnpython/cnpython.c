@@ -211,6 +211,13 @@ int _int(char *str){
 }
 
 
+int bool(int n){
+        if(n == 0){
+                return False;
+        }
+        return True;
+}
+
 
 
 /*Takes as a parameter the prompt for the user and reads the input byte by byte and returns it*/

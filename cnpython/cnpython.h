@@ -21,7 +21,7 @@
 #define or ||
 #define not !
 #define is ==
-#define isnt !=
+#define isnt != 
 #define in ,
 #define elif else if
 
@@ -192,6 +192,10 @@ char *str(int number);
 
 /*Converts a string to an integer*/
 int _int(char *str);
+
+
+/*Converts a number into a boolean*/
+int bool(int n);
 
 
 
