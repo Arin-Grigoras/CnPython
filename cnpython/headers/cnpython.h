@@ -164,9 +164,6 @@ enum types{
 /*Converts any decimal value to a binary value*/
 long long bin(long decimal);
 
-/*This functions gives a summary of all the functions that are in this project*/
-void help();
-
 
 /*Converts any decimal value to a hexadecimal value*/
 void hex(long n);
@@ -254,24 +251,24 @@ int str_count(char *str, char find);
 
 
 /*Returns 0 if the certain string ends with the element provided*/
-int endswith(char *str, char element);
+int str_endswith(char *str, char element);
 
 
 /*Joins 2 strings togheter and returns a third string*/
-char *join(char *str1, char *str2);
+char *str_join(char *str1, char *str2);
 
 
 /*Replaces all found occurunces of a character with another character
  * and returns a new string*/
-char *replace(char *str, char find, char repl);
+char *str_replace(char *str, char find, char repl);
 
 
 /*Returns the index of the character if it was found in the string, if not it returns -1*/
-int find(char *str, char find);
+int str_find(char *str, char find);
 
 
 /*Returns 0 if the string starts with the specified element*/
-int startswith(char *str, char element);
+int str_startswith(char *str, char element);
 
 
 /*Reads the whole entire file you pass it*/
@@ -335,6 +332,11 @@ int any(int *arr, int size);
 
 /*Returns true if one of the elements in the array is True for double arrays*/
 int d_any(double *arr, int size);
+
+/*Returns True if all the elements in a string are lowercase*/
+int str_islower(char *str);
+
+/*Returns True*/
 
 
 #endif /*CYTHON_H*/

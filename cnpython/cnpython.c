@@ -686,3 +686,26 @@ int d_any(double *arr, int size){
 
     return False;
 }
+
+
+int str_islower(char *str){
+    int total = 0;
+    int whitespaces = 0;
+    int str_size = strlen(str);
+
+    for(int i = 0; i < str_size; i++){
+        if(islower(str[i])){
+            total++;
+        }else if(isupper(str[i])){
+            return False;
+        }else{
+            whitespaces++;
+        }
+    }
+
+    if(total = str_size - whitespaces){
+        return True;
+    }
+
+    return False;
+}
