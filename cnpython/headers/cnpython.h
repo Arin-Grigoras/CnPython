@@ -4,7 +4,7 @@
 #ifndef CYTHON_H
 #define CYTHON_H
 
-/*INCLUDES*/
+/*Standard includes*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,6 +12,14 @@
 #include <stdarg.h>
 #include <errno.h>
 #include <stdint.h>
+
+
+
+//Own includes
+
+#include "./exceptions.h"
+#include "./print.h"
+
 
 //#define tuple(...)
 
@@ -128,15 +136,7 @@ enum types{
 };
 
 
-/*Exceptions*/
-#define AllocationError 1
-#define ReallocationError 2
-#define MemoryError 3
-#define ZeroDivisionError 4
-#define FileOpenError 5
 
-
-void exception(int except, char *file, int line);
 
 
 /*Returns a number from -1 to 10 depending on the variable data type*/
@@ -220,29 +220,7 @@ double min(double numbers[], int arrlen);
 
 
 
-/*Prints integers*/
-void print_int(int int_to_print);
-
-
-/*Prints an integer array*/
-void print_int_arr(int *arr, int size);
-
-
-/*Prints a double array*/
-void print_double_arr(double *arr, int size);
-
-/*Prints a long array*/
-void print_long_arr(long *arr, int size);
-
-/*Prints string array*/
-void print_str_arr(char **arr, int size);
-
-/*Basically printf but has array printing built in*/
-void print(char *format, ...);
-
-
-
-//const int RUN = 32;
+const int RUN = 32;
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
  

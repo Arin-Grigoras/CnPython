@@ -1,7 +1,5 @@
 # CnPython
 
-  ![alt text](https://github.com/koreaneggroll/CnPython/blob/main/CnPython.png?raw=true)
-
   Implementing most of pythons builtin functions in C, making it easier to read.
 
   ## Compile
@@ -73,11 +71,4 @@ I will have more time to spend on this project I will definetly contribute a lit
 
    This code is under a MIT license. This means you can do whatever you want with the code but the same license has to be in your project if you want to use this in your project.
 
-
-  ## Idea
-   Idea came from @midnqp, make sure to check his repository as well [https://github.com/midnqp/libavoidrepetition-c]
-
-   ## Contact
-   
-   [Official Discord Server](https://discord.gg/PHmZyqgz8A) &nbsp;&nbsp;|&nbsp;&nbsp;  [Instagram](https://www.instagram.com/arngdesignnofficial/)
    
