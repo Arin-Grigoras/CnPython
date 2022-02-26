@@ -317,5 +317,13 @@ int arr_find(int *arr, int value, int size);
 /*Pops out the last element of an array*/
 void pop(int *arr, int size);
 
+
+/*Returns the absolute value of an integer number*/
+int int_abs(int number);
+
+/*Returns the absolute value of a double number*/
+double double_abs(double number)
+
+
 #endif /*CYTHON_H*/
 /*End of header guard*/

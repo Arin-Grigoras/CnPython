@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-#include "../../cnpython/print.h"
+#include "../../cnpython/headers/cnpython.h"
 
 typedef void* var;
 
