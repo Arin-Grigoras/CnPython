@@ -53,10 +53,15 @@
 
 
 /*STRUCTS*/
+
+
+/*
 typedef void* var;
+*/
+typedef char* string;
 
 
-extern var Int;
+/*extern var Int;
 extern var String;
 extern var Double;
 extern var Float;
@@ -64,9 +69,9 @@ extern var Char;
 extern var Long;
 extern var Function;
 //extern var Tuple;
+*/
 
-
-struct Int{
+/*struct Int{
     int val;
 };
 //typedef Int inte;
@@ -110,7 +115,7 @@ struct Long{
 
 struct Function{
     var (*func)(var);
-};
+};*/
 
 
 /*New datatypes*/

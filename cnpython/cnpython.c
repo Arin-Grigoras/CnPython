@@ -176,7 +176,7 @@ char *input(char *str){
 
                 c = getchar();
 
-                if (c == EOF || c == '\n') {
+                if (c == EOF or c == '\n') {
                         buffer[position] = '\0';
                         return buffer;
                 } else {
@@ -252,7 +252,7 @@ void insertionSort(int arr[], int left, int right)
     {
         int temp = arr[i];
         int j = i - 1;
-        while (j >= left && arr[j] > temp)
+        while (j >= left and arr[j] > temp)
         {
             arr[j+1] = arr[j];
             j--;
@@ -274,7 +274,7 @@ void merge(int arr[], int l, int m, int r){
     int j = 0;
     int k = l;
  
-    while (i < len1 && j < len2)
+    while (i < len1 and j < len2)
     {
         if (left[i] <= right[j])
         {
@@ -700,7 +700,7 @@ int str_islower(char *str){
     for(int i = 0; i < str_size; i++){
         if(islower(str[i])){
             total++;
-        }else if(isupper(str[i])){
+        }elif(isupper(str[i])){
             return False;
         }else{
             whitespaces++;
