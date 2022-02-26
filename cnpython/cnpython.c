@@ -606,7 +606,7 @@ char chr(int ascii) {
 }
 
 
-int int_abs(int number){
+int i_abs(int number){
     if(number < 0){
         return -number;
     }
@@ -614,7 +614,7 @@ int int_abs(int number){
     return number;
 }
 
-double double_abs(double number){
+double d_abs(double number){
     if(number < 0){
         return -number;
     }
@@ -643,6 +643,45 @@ int all(int *arr, int size){
 
     if(total_trues == size){
         return True;
+    }
+
+    return False;
+}
+
+
+int d_all(double *arr, int size){
+    int total_trues = 0;
+
+    for(int i = 0; i < size; i++){
+        if(arr[i] != 0){
+            total_trues++;
+        }
+    }
+
+    if(total_trues == size){
+        return True;
+    }
+
+    return False;
+}
+
+
+int any(int *arr, int size){
+    for(int i = 0; i < size; i++){
+        if(arr[i] != 0){
+            return True;
+        }
+    }
+
+
+    return False;
+}
+
+int d_any(double *arr, int size){
+    for(int i = 0; i < size; i++){
+        if(arr[i] != 0){
+            return True;
+        }
     }
 
     return False;

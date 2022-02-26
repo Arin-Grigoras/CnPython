@@ -319,13 +319,22 @@ void pop(int *arr, int size);
 
 
 /*Returns the absolute value of an integer number*/
-int int_abs(int number);
+int i_abs(int number);
 
 /*Returns the absolute value of a double number*/
-double double_abs(double number);
+double d_abs(double number);
 
-/*Returns True if all the elements in the array are empty*/
+/*Returns True if all the elements in the array are True*/
 int all(int *arr, int size);
+
+/*Returns True if all the elements in the array are True. For double type arrays*/
+int d_all(double *arr, int size);
+
+/*Returns True if one of the elements in the array is True for int arrays*/
+int any(int *arr, int size);
+
+/*Returns true if one of the elements in the array is True for double arrays*/
+int d_any(double *arr, int size);
 
 
 #endif /*CYTHON_H*/
