@@ -12,6 +12,7 @@
 #include <stdarg.h>
 #include <errno.h>
 #include <stdint.h>
+#include <ctype.h>
 
 
 
@@ -19,6 +20,7 @@
 
 #include "./exceptions.h"
 #include "./print.h"
+#include "./help.h"
 
 
 //#define tuple(...)
@@ -44,9 +46,15 @@
 
 
 
+#define RUN 32
+#define MAX(x, y) (((x) > (y)) ? (x) : (y))
+#define MIN(x, y) (((x) < (y)) ? (x) : (y))
+
+
 
 /*STRUCTS*/
 typedef void* var;
+
 
 extern var Int;
 extern var String;
@@ -162,181 +170,158 @@ enum types{
 
 
 /*Converts any decimal value to a binary value*/
-long long bin(long decimal);
-
+extern long long bin(long decimal);
 
 /*Converts any decimal value to a hexadecimal value*/
-void hex(long n);
-
+extern void hex(long n);
 
 /*Converts any decimal value to an octal value*/
-long oct(long dec);
-
+extern long oct(long dec);
 
 /*Power function*/
-double power(double base, double exponent);
-
+extern double power(double base, double exponent);
 
 /*Factorial function*/
-int factorial(int n);
+extern int factorial(int n);
 
 
 /*Converts a number to a string*/
-char *str(int number);
-
-
-
+extern char *str(int number);
 
 /*Converts a string to an integer*/
-int _int(char *str);
-
+extern int _int(char *str);
 
 /*Converts a number into a boolean*/
-int _bool(int n);
-
+extern int _bool(int n);
 
 
 /*Takes as a parameter the prompt for the user and reads the input byte by byte and returns it*/
-char *input(char *str);
-
-
+extern char *input(char *str);
 
 /*Reverses an int array*/
-int* reversed(int* arr, int size);
+extern int* reversed(int* arr, int size);
+
+//! TODO: Make reversed functions for other array data types as well
 
 
 
 
 /*Returns the biggest element in an array*/
-double max (double numbers[], int arrlen);
-
-
+extern double max (double numbers[], int arrlen);
 
 /*Returns the smallest element in an array*/
-double min(double numbers[], int arrlen);
-
-
-
-const int RUN = 32;
-#define MAX(x, y) (((x) > (y)) ? (x) : (y))
-#define MIN(x, y) (((x) < (y)) ? (x) : (y))
+extern double min(double numbers[], int arrlen);
  
+
 /*Used in tim sort algorithm*/
-void insertionSort(int arr[], int left, int right);
+extern void insertionSort(int arr[], int left, int right);
  
 /*Merge function is used in the tim sort algorithm*/
-void merge(int arr[], int l, int m, int r);
+extern void merge(int arr[], int l, int m, int r);
  
-
 /*Tim Sort algorithm*/
-void timSort(int arr[], int n);
-
-
+extern void timSort(int arr[], int n);
 
 /*uses timSort algorithm to sort an array*/
-int* sorted(int *arr, int size);
+extern int* sorted(int *arr, int size);
 
 
 
 /*Gets the sum of all the elements in an array*/
-long sum(int *arr, int size);
-
+extern long sum(int *arr, int size);
 
 /*Returns the length of a string*/
-int str_len(char *str);
-
+extern int str_len(char *str);
 
 /*Counts how many times the program found a character in a given string*/
-int str_count(char *str, char find);
-
+extern int str_count(char *str, char find);
 
 /*Returns 0 if the certain string ends with the element provided*/
-int str_endswith(char *str, char element);
-
+extern int str_endswith(char *str, char element);
 
 /*Joins 2 strings togheter and returns a third string*/
-char *str_join(char *str1, char *str2);
-
+extern char *str_join(char *str1, char *str2);
 
 /*Replaces all found occurunces of a character with another character
  * and returns a new string*/
-char *str_replace(char *str, char find, char repl);
-
+extern char *str_replace(char *str, char find, char repl);
 
 /*Returns the index of the character if it was found in the string, if not it returns -1*/
-int str_find(char *str, char find);
-
+extern int str_find(char *str, char find);
 
 /*Returns 0 if the string starts with the specified element*/
-int str_startswith(char *str, char element);
+extern int str_startswith(char *str, char element);
+
+
+extern size_t str_split(char ***array, char *str, const char *del);
 
 
 /*Reads the whole entire file you pass it*/
-char *read_file(char *filename);
+extern char *read_file(char *filename);
 
-size_t str_split(char ***array, char *str, const char *del);
 
 /*Prints the splited string*/
-void printSplit(char *str, const char *del);
+extern void printSplit(char *str, const char *del);
 
 /*Splits a string and returns an array*/
-char **split(char **array, char *str, const char *del);
+extern char **split(char **array, char *str, const char *del);
 
 
 /* Returns the char for the ASCII code */
-char chr(int ascii);
+extern char chr(int ascii);
 
 /* Returns the ASCII code for the char */
-int ord(char c);
+extern int ord(char c);
 
 /*Returns 0 of the value was found it the specified string*/
-int isin(char *str, char value);
+extern int isin(char *str, char value);
 
 /*Returns the remainder of the division of 2 numbers*/
-int rem(int a, int b);
+extern int rem(int a, int b);
 
 /*Returns the percentage*/
-double percentage(float p, float n);
+extern double percentage(float p, float n);
 
 /*Adds a new value to the end of a string*/
-void iappend(int *arr, int value, int size);
+extern void iappend(int *arr, int value, int size);
 
 /*Copies the elements of an array to another array*/
-int *copy(int *arr, int *dest, int size);
+extern int *copy(int *arr, int *dest, int size);
 
 /*Returns how many times a value was found inside an array*/
-int arr_count(int *arr, int value, int size);
+extern int arr_count(int *arr, int value, int size);
 
 
 /*Returns the index at which it found a specified value, if it didn't find it, returns -1*/
-int arr_find(int *arr, int value, int size);
+extern int arr_find(int *arr, int value, int size);
 
 /*Pops out the last element of an array*/
-void pop(int *arr, int size);
+extern void pop(int *arr, int size);
 
 
 /*Returns the absolute value of an integer number*/
-int i_abs(int number);
+extern int i_abs(int number);
 
 /*Returns the absolute value of a double number*/
-double d_abs(double number);
+extern double d_abs(double number);
 
 /*Returns True if all the elements in the array are True*/
-int all(int *arr, int size);
+extern int all(int *arr, int size);
 
 /*Returns True if all the elements in the array are True. For double type arrays*/
-int d_all(double *arr, int size);
+extern int d_all(double *arr, int size);
 
 /*Returns True if one of the elements in the array is True for int arrays*/
-int any(int *arr, int size);
+extern int any(int *arr, int size);
 
 /*Returns true if one of the elements in the array is True for double arrays*/
-int d_any(double *arr, int size);
+extern int d_any(double *arr, int size);
 
 /*Returns True if all the elements in a string are lowercase*/
-int str_islower(char *str);
+extern int str_islower(char *str);
 
-/*Returns True*/
+/*Returns True if all the elemenets in a string are uppercase*/
+extern int str_isupper(char *str);
 
 
 #endif /*CYTHON_H*/

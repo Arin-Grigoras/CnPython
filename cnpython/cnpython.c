@@ -507,6 +507,10 @@ void printSplit(char *str, const char *del){
 
 
 
+/*
+
+! We have to make this function work in the near future
+
 char **split(char **array, char *str, const char *del){
 	char *token;
     	size_t i = 0;
@@ -525,7 +529,7 @@ char **split(char **array, char *str, const char *del){
     	}
 
     	return array;
-}
+}*/
 
 
 
@@ -597,7 +601,7 @@ int arr_find(int *arr, int value, int size){
 
 
 void pop(int *arr, int size){
-    arr[size-1] = None;
+    arr[size-1] = 0;
 }
 
 
@@ -704,6 +708,29 @@ int str_islower(char *str){
     }
 
     if(total = str_size - whitespaces){
+        return True;
+    }
+
+    return False;
+}
+
+
+int str_isupper(char *str){
+    int total = 0;
+    int whitespaces = 0;
+    int str_size = strlen(str);
+
+    for(int i = 0; i < str_size; i++){
+        if(isupper(str[i])){
+            total++;
+        }else if(islower(str[i])){
+            return False;
+        }else{
+            whitespaces++;
+        }
+    }
+
+    if(total == str_size - whitespaces){
         return True;
     }
 
