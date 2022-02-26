@@ -3,28 +3,7 @@
   Implementing most of pythons builtin functions in C, making it easier to read.
 
   ## Compile
-  	gcc filename.c cnpython.c -o filename -lm
-  or
-
-    make test
-
-  or
-
-    gcc filename.c -o filename.o
-
-  if you are using just one module of the library
-
-  ## Template Code
-  	
-	#include <stdio.h>
-	#include "cnpython.h>
-
-	int main(){
-		print("Hello world");
-
-
-		return 0;
-	}
+    Go to the makefile and adjust it to your needs.
 
 
   ## How to contribute
@@ -33,39 +12,39 @@
 I will have more time to spend on this project I will definetly contribute a little bit more.
 
   ## Implemented functions
-   * type(var),
-   * bin(decimal),
-   * hex(decimal),
-   * oct(decimal),
-   * pow(base, exponent),
-   * str(number),
-   * _int(string),
-   * input(prompt),
-   * reverse(arr, size),
-   * min(arr, size),
-   * max(arr, size),
-   * print(*format, ...),	
-   * sorted(arr, size),
-   * sum(arr, size),
-   * str_len(str),
-   * str_count(str, find),
-   * endswith(str, element),
-   * replace(str, find, repl),
-   * find(str, find),
-   * startswith(str, element),
-   * str_split(arr, str, del),
-   * printSplit(str, del),
-   * split(arr, str, del)
-   * chr(ascii)
-   * ord(char)
-   * isin(str, value)
-   * rem(a, b)
-   * percentage(p, n)
-   * iappend(arr, value, size)
-   * copy(arr, dest, size)
-   * arr_count(arr, value, size)
-   * arr_find(arr, value, size)
-   * pop(arr, size)
+   - [x] type(var),
+   - [x] bin(decimal),
+   - [x] hex(decimal),
+   - [x] oct(decimal),
+   - [x] pow(base, exponent),
+   - [x] str(number),
+   - [x] _int(string),
+   - [x] input(prompt),
+   - [x] reverse(arr, size),
+   - [x] min(arr, size),
+   - [x] max(arr, size),
+   - [x] print(*format, ...),	
+   - [x] sorted(arr, size),
+   - [x] sum(arr, size),
+   - [x] str_len(str),
+   - [x] str_count(str, find),
+   - [x] endswith(str, element),
+   - [x] replace(str, find, repl),
+   - [x] find(str, find),
+   - [x] startswith(str, element),
+   - [ ] str_split(arr, str, del),
+   - [x] printSplit(str, del),
+   - [ ] split(arr, str, del)
+   - [x] chr(ascii)
+   - [x] ord(char)
+   - [x] isin(str, value)
+   - [x] rem(a, b)
+   - [x] percentage(p, n)
+   - [x] iappend(arr, value, size)
+   - [x] copy(arr, dest, size)
+   - [x] arr_count(arr, value, size)
+   - [x] arr_find(arr, value, size)
+   - [x] pop(arr, size)
 
   ## License
 

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./cnpython/cnpython.h"
+#include "./cnpython/headers/cnpython.h"
 
 
 void test_input(){
