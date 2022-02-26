@@ -322,7 +322,10 @@ void pop(int *arr, int size);
 int int_abs(int number);
 
 /*Returns the absolute value of a double number*/
-double double_abs(double number)
+double double_abs(double number);
+
+/*Returns True if all the elements in the array are empty*/
+int all(int *arr, int size);
 
 
 #endif /*CYTHON_H*/
