@@ -21,7 +21,7 @@ struct BinarySearchTree
 
     int (*compare)(void *data1, void *data2);
     void * (*search)(struct BinarySearchTree *tree, void *data);
-    void (*insert)(struct BinarySearchTree *tree, void *data);
+    void (*insert)(struct BinarySearchTree *tree, void *data, int size);
 };
 
 /*BinarySearchTree constructor*/

@@ -12,7 +12,7 @@ struct Dictionary
 
     void (*insert)(struct Dictionary *dict, void *key, int key_size, void *value, int size_value);
     void *(*search)(struct Dictionary *dict, void *key);
-}
+};
 
 
 struct Dictionary dictionary_constructor(int (*compare)(void *key1, void *key2));
