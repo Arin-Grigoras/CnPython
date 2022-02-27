@@ -731,7 +731,8 @@ int str_isalpha(char *str){
     int whitespaces = 0;
     int str_size = strlen(str);
 
-    for(int i = 0; i < str_size; i++){
+    for(int i = 0; i < str_size; i++)
+    {
         if(isalpha(str[i]))
         {
             total++;
@@ -750,6 +751,36 @@ int str_isalpha(char *str){
     if(total = str_size - whitespaces){
         return True;
     }
+
+    return False;
+}
+
+
+int str_isdigit(char *str){
+    int total = 0;
+    int whitespaces = 0;
+    int str_size = strlen(str);
+
+    for(int i = 0; i < str_size; i++)
+    {
+        if(isdigit(str[i]))
+        {
+            total++;
+        }
+        elif(isspace(str[i]))
+        {
+            whitespaces++;
+        }
+        else
+        {
+            return False;
+        }
+    }
+
+    if(total = str_size - whitespaces){
+        return True;
+    }
+
 
     return False;
 }

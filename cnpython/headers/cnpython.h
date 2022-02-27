@@ -371,7 +371,11 @@ extern int str_isspace(char *str);
 /*Returns True if all the elements in the string are from the alphabet*/
 extern int str_isalpha(char *str);
 
+/*Returns True if all the elements in the string are digits*/
+extern int str_isdigit(char *str);
 
+/*Splits the string at line breaks and returns an array*/
+extern char **str_splitlines(char *str);
 
 #endif /*CYTHON_H*/
 /*End of header guard*/
