@@ -2,6 +2,19 @@
 #define CNPY_BINARY_SEARCH_TREE
 
 
+//Standard Includes
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+
+//Own Includes
+#include "../Common/node.h"
+
+
+
+
+
 struct BinarySearchTree
 {
     struct Node *head;

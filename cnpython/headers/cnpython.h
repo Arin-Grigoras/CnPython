@@ -27,19 +27,56 @@
 
 
 /*DEFINES*/
-#define and &&
-#define or ||
-#define not !
-#define is ==
-#define isnt != 
-#define in ,
-#define elif else if
 
+//python 'and' logical operator implemented in C
+#ifndef and
+    #define and &&
+#endif //and
 
-#define True 1
-#define False 0
-#define None ((void*)0) //basically NULL
+//python 'or' logical operator implemented in C
+#ifndef or
+    #define or ||
+#endif //or
 
+//python 'not' logical operator implemented in C
+#ifndef not
+    #define not !
+#endif //not
+
+//python 'is' logical operator implemented in C
+#ifndef is
+    #define is ==
+#endif //is
+
+//python 'isnt' logical operator implemented in C
+#ifndef isnt
+    #define isnt != 
+#endif //isnt
+
+//supposed to be pythons 'in' operator but it's not really good implemented
+#ifndef in
+    #define in ,
+#endif //in
+
+//else if in python
+#ifndef elif
+    #define elif else if
+#endif //elif
+
+//if the True macro is not defined we define it and if it is we skip
+#ifndef True
+    #define True 1
+#endif
+
+//if the False macro is not defined we define it and if it is we skip
+#ifndef False
+    #define False 0
+#endif
+
+//None = NULL
+#ifndef None
+    #define None ((void*)0) //basically NULL
+#endif //None
 
 //Really bad class definition but howdy, it works
 #define class struct
@@ -47,9 +84,12 @@
 
 
 #define RUN 32
+
+//MAX and MIN macro functions
+/*
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
-
+*/
 
 
 /*STRUCTS*/
@@ -58,6 +98,8 @@
 /*
 typedef void* var;
 */
+
+//typedefs the char array datatype to a custom one called 'string'
 typedef char* string;
 
 
@@ -126,9 +168,11 @@ struct Function{
     const var* val;
 };*/
 
+
+
 /*Is used to determine the type of a variable */
 enum types{
-        TYPE_INT = 0,
+        TYPE_INT = 0, 
         TYPE_CHAR = 1,
         TYPE_STRING = 2,
         TYPE_LONG = 3,
@@ -149,7 +193,7 @@ enum types{
 /*Returns a number from -1 to 10 depending on the variable data type*/
 #define type(X) \
         _Generic(X, \
-                        int: TYPE_INT, \
+                        int: TYPE_INT, \ 
                         char: TYPE_CHAR, \
                         char*: TYPE_STRING, \
                         char**: TYPE_STRING_ARR, \
