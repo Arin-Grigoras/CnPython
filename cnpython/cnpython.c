@@ -724,3 +724,32 @@ int str_isspace(char *str){
         return True;
     }
 }
+
+
+int str_isalpha(char *str){
+    int total = 0;
+    int whitespaces = 0;
+    int str_size = strlen(str);
+
+    for(int i = 0; i < str_size; i++){
+        if(isalpha(str[i]))
+        {
+            total++;
+        }
+        elif(isspace(str[i]))
+        {
+            whitespaces++;
+        }
+        else
+        {
+            return False;
+        }
+    }
+
+
+    if(total = str_size - whitespaces){
+        return True;
+    }
+
+    return False;
+}

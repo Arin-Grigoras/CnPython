@@ -2,17 +2,20 @@
 #define CNPY_TUPLE_H
 
 
-//Includes
+/*
+
+    ! Left for another time
+
+*/
 
 
-//Defines
+struct Tuple
+{
+    void **TupleEntries;
+};
 
 
-//structs
 
-
-
-//Function declarations
 
 
 

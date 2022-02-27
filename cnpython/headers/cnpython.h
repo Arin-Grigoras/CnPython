@@ -365,8 +365,11 @@ extern int str_islower(char *str);
 /*Returns True if all the elemenets in a string are uppercase*/
 extern int str_isupper(char *str);
 
-/*Returns True if all the elements in the array are whitespaces*/
+/*Returns True if all the elements in the string are whitespaces*/
 extern int str_isspace(char *str);
+
+/*Returns True if all the elements in the string are from the alphabet*/
+extern int str_isalpha(char *str);
 
 
 
