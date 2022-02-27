@@ -295,7 +295,8 @@ extern int str_find(char *str, char find);
 extern int str_startswith(char *str, char element);
 
 
-extern size_t str_split(char ***array, char *str, const char *del);
+/*Idk what this was*/
+//extern size_t str_split(char ***array, char *str, const char *del);
 
 
 /*Reads the whole entire file you pass it*/
@@ -303,10 +304,10 @@ extern char *read_file(char *filename);
 
 
 /*Prints the splited string*/
-extern void printSplit(char *str, const char *del);
+//extern void printSplit(char *str, const char del);
 
 /*Splits a string and returns an array*/
-extern char **split(char **array, char *str, const char *del);
+extern void str_split(char *str, const char *del);
 
 
 /* Returns the char for the ASCII code */
@@ -375,7 +376,7 @@ extern int str_isalpha(char *str);
 extern int str_isdigit(char *str);
 
 /*Splits the string at line breaks and returns an array*/
-extern char **str_splitlines(char *str);
+extern void str_splitlines(char *str);
 
 #endif /*CYTHON_H*/
 /*End of header guard*/

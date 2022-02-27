@@ -441,7 +441,7 @@ char *read_file(char *filename){
 }
 
 
-
+/*
 size_t str_split(char ***array, char *str, const char *del) {
     	char *token;
     	size_t i = 0;
@@ -455,18 +455,17 @@ size_t str_split(char ***array, char *str, const char *del) {
                         raise_exception(ReallocationError, __FILE__, __LINE__);
                 }
 
-		(*array)[i++] = token;
+		    (*array)[i++] = token;
         	token = strtok(NULL, del);
     	}
 
     	return i;
-}
+}*/
 
 
-
-void printSplit(char *str, const char *del){
-    	char **split = NULL;
-   	size_t count = str_split(&split, str, del);
+/*
+void printSplit(char ***split, char *str, const char del){
+   	size_t count = str_split(&split, del);
 
     	for(size_t i = 0; i < count; i++) {
         	printf("[%s], ", split[i]);
@@ -474,32 +473,23 @@ void printSplit(char *str, const char *del){
 
     	free(split);
 }
+*/
 
 
 
-/*
 
-! We have to make this function work in the near future
+void str_split(char *str, const char *del)
+{
+    char *token;
 
-char **split(char **array, char *str, const char *del){
-	char *token;
-    	size_t i = 0;
+    token = strtok(str, del);
 
-    	token = strtok(str, del);
+    while(token != None){
+        print(token);
 
-    	while(token != NULL) {
-        	*array = realloc(*array, sizeof(char *) * (i + 1));
-
-                if(!array){
-                        raise_exception(ReallocationError, __FILE__, __LINE__);
-                }
-
-        	(*array)[i++] = token;
-        	token = strtok(NULL, del);
-    	}
-
-    	return array;
-}*/
+        token = strtok(None, del);
+    }
+}
 
 
 
@@ -788,7 +778,7 @@ int str_isdigit(char *str)
 }
 
 
-char **str_splitlines(char *str)
+void str_splitlines(char *str)
 {
-    
+    str_split(str, " ");
 }
