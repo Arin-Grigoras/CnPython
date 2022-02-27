@@ -2,3 +2,4 @@
 github
 .vscode/
 .vscode/settings.json
+main-tests.c
