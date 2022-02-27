@@ -4,19 +4,6 @@
 #define CNPY_LIST_H
 
 
-//Includes
-
-
-//Defines
-
-
-//structs
-
-
-
-//Function declarations
-
-
 
 #endif //CNPY_LIST_H
 

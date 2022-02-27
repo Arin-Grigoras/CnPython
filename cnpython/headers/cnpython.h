@@ -21,6 +21,14 @@
 #include "./cnpy_exceptions.h"
 #include "./cnpy_print.h"
 #include "./cnpy_help.h"
+#include "./datatypes_implementation/cnpy_default_dt.h"
+#include "./datatypes_implementation/binarySearchTree/cnpy_BinarySearchTree.h"
+#include "./datatypes_implementation/Common/node.h"
+#include "./datatypes_implementation/dict/cnpy_dict.h"
+#include "./datatypes_implementation/dict/cnpy_entry.h"
+#include "./datatypes_implementation/list/cnpy_list.h"
+#include "./datatypes_implementation/tuple/cnpy_tuple.h"
+
 
 
 //#define tuple(...)
@@ -169,44 +177,6 @@ struct Function{
 
 
 
-/*Is used to determine the type of a variable */
-enum types{
-        TYPE_INT = 0, 
-        TYPE_CHAR = 1,
-        TYPE_STRING = 2,
-        TYPE_LONG = 3,
-        TYPE_DOUBLE = 4,
-        TYPE_FLOAT = 5,
-        TYPE_INT_ARR = 6,
-        TYPE_STRING_ARR = 7,
-        TYPE_LONG_ARR = 8,
-        TYPE_DOUBLE_ARR = 9,
-        TYPE_FLOAT_ARR = 10,
-        TYPE_UNKNOWN = -1
-};
-
-
-
-
-
-/*Returns a number from -1 to 10 depending on the variable data type*/
-#define type(X) \
-        _Generic(X, \
-                        int: TYPE_INT, \
-                        char: TYPE_CHAR, \
-                        char*: TYPE_STRING, \
-                        char**: TYPE_STRING_ARR, \
-                        long: TYPE_LONG, \
-                        double: TYPE_DOUBLE, \
-                        float: TYPE_FLOAT, \
-                        int*: TYPE_INT_ARR, \
-                        long*: TYPE_LONG_ARR, \
-                        double*: TYPE_DOUBLE_ARR, \
-                        float*: TYPE_FLOAT_ARR, \
-                        default: TYPE_UNKNOWN   )
-
-
-
 
 
 
@@ -228,17 +198,17 @@ extern int factorial(int n);
 
 
 /*Converts a number to a string*/
-extern char *str(int number);
+extern string str(int number);
 
 /*Converts a string to an integer*/
-extern int _int(char *str);
+extern int _int(string str);
 
 /*Converts a number into a boolean*/
 extern int _bool(int n);
 
 
 /*Takes as a parameter the prompt for the user and reads the input byte by byte and returns it*/
-extern char *input(char *str);
+extern string input(string str);
 
 /*Reverses an int array*/
 extern int* reversed(int* arr, int size);
@@ -273,41 +243,41 @@ extern int* sorted(int *arr, int size);
 extern long sum(int *arr, int size);
 
 /*Returns the length of a string*/
-extern int str_len(char *str);
+extern int str_len(string str);
 
 /*Counts how many times the program found a character in a given string*/
-extern int str_count(char *str, char find);
+extern int str_count(string str, char find);
 
 /*Returns 0 if the certain string ends with the element provided*/
-extern int str_endswith(char *str, char element);
+extern int str_endswith(string str, char element);
 
 /*Joins 2 strings togheter and returns a third string*/
-extern char *str_join(char *str1, char *str2);
+extern string str_join(string str1, string str2);
 
 /*Replaces all found occurunces of a character with another character
  * and returns a new string*/
-extern char *str_replace(char *str, char find, char repl);
+extern string str_replace(string str, char find, char repl);
 
 /*Returns the index of the character if it was found in the string, if not it returns -1*/
-extern int str_find(char *str, char find);
+extern int str_find(string str, char find);
 
 /*Returns 0 if the string starts with the specified element*/
-extern int str_startswith(char *str, char element);
+extern int str_startswith(string str, char element);
 
 
 /*Idk what this was*/
-//extern size_t str_split(char ***array, char *str, const char *del);
+//extern size_t str_split(string **array, string str, const string del);
 
 
 /*Reads the whole entire file you pass it*/
-extern char *read_file(char *filename);
+extern string read_file(string filename);
 
 
 /*Prints the splited string*/
-//extern void printSplit(char *str, const char del);
+//extern void printSplit(string str, const char del);
 
 /*Splits a string and returns an array*/
-extern void str_split(char *str, const char *del);
+extern void str_split(string str, const string del);
 
 
 /* Returns the char for the ASCII code */
@@ -317,7 +287,7 @@ extern char chr(int ascii);
 extern int ord(char c);
 
 /*Returns 0 of the value was found it the specified string*/
-extern int isin(char *str, char value);
+extern int isin(string str, char value);
 
 /*Returns the remainder of the division of 2 numbers*/
 extern int rem(int a, int b);
@@ -361,22 +331,22 @@ extern int any(int *arr, int size);
 extern int d_any(double *arr, int size);
 
 /*Returns True if all the elements in a string are lowercase*/
-extern int str_islower(char *str);
+extern int str_islower(string str);
 
 /*Returns True if all the elemenets in a string are uppercase*/
-extern int str_isupper(char *str);
+extern int str_isupper(string str);
 
 /*Returns True if all the elements in the string are whitespaces*/
-extern int str_isspace(char *str);
+extern int str_isspace(string str);
 
 /*Returns True if all the elements in the string are from the alphabet*/
-extern int str_isalpha(char *str);
+extern int str_isalpha(string str);
 
 /*Returns True if all the elements in the string are digits*/
-extern int str_isdigit(char *str);
+extern int str_isdigit(string str);
 
 /*Splits the string at line breaks and returns an array*/
-extern void str_splitlines(char *str);
+extern void str_splitlines(string str);
 
 #endif /*CYTHON_H*/
 /*End of header guard*/

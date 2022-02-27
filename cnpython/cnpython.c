@@ -23,7 +23,7 @@ long long bin(long decimal){
 /*Converts any decimal value to a hexadecimal value*/
 void hex(long n)
 {
-        char *hexaDeciNum = (char*)malloc(sizeof(char) * 100);
+        string hexaDeciNum = (char*)malloc(sizeof(char) * 100);
 
         if(!hexaDeciNum){
                 raise_exception(AllocationError, __FILE__, __LINE__);
@@ -75,7 +75,7 @@ long oct(long dec){
 
 
 /*Power function*/
-double cnp_pow(double base, double exponent){
+double power(double base, double exponent){
         double result = 1;
         for(exponent; exponent > 0; exponent--){
                 result *= base;
@@ -97,9 +97,9 @@ int factorial(int n){
 
 
 /*Converts a number to a string*/
-char *str(int number){
+string str(int number){
         int size = (int)((ceil(log10(number))+1)*sizeof(char));
-        char *buffer = (char*)malloc(sizeof(size));
+        string buffer = (char*)malloc(sizeof(size));
 
         if(!buffer){
                 raise_exception(AllocationError, __FILE__, __LINE__);
@@ -115,7 +115,7 @@ char *str(int number){
 
 
 /*Converts a string to an integer*/
-int _int(char *str){
+int _int(string str){
         return atoi(str);
 }
 
@@ -130,10 +130,10 @@ int _bool(int n){
 
 
 /*Takes as a parameter the prompt for the user and reads the input byte by byte and returns it*/
-char *input(char *str){
+string input(string str){
         int bufsize = 100;
         int position = 0;
-        char *buffer = (char*)malloc(sizeof(char) * bufsize);
+        string buffer = (char*)malloc(sizeof(char) * bufsize);
         int c;
 
         if (!buffer) {
@@ -326,14 +326,14 @@ long sum(int *arr, int size){
 
 
 
-int str_len(char *str){
+int str_len(string str){
 	//exists already but decided to put this here cuz why not
 	return strlen(str);
 }
 
 
 /*Counts how many times the program found a character in a given string*/
-int str_count(char *str, char find){
+int str_count(string str, char find){
         
         int count = 0;
         
@@ -348,7 +348,7 @@ int str_count(char *str, char find){
 
 
 
-int endswith(char *str, char element){
+int endswith(string str, char element){
         if(str[strlen(str)-1] == element){
                 return 0;
         }
@@ -358,8 +358,8 @@ int endswith(char *str, char element){
 
 
 
-char *join(char *str1, char *str2){
-        char *str3 = (char*)malloc(sizeof(str1) + sizeof(str2));
+string join(string str1, string str2){
+        string str3 = (char*)malloc(sizeof(str1) + sizeof(str2));
 
         if(!str3){
                 raise_exception(AllocationError, __FILE__, __LINE__);
@@ -373,8 +373,8 @@ char *join(char *str1, char *str2){
 
 
 
-char *replace(char *str, char find, char repl){
-        char *ret_string = (char*)malloc(sizeof(str));
+string replace(string str, char find, char repl){
+        string ret_string = (char*)malloc(sizeof(str));
         
         if(!ret_string){
                 raise_exception(AllocationError, __FILE__, __LINE__);
@@ -394,7 +394,7 @@ char *replace(char *str, char find, char repl){
 
 
 
-int find(char *str, char find){
+int find(string str, char find){
         for(int i = 0; i < strlen(str); i++){
                 if(str[i] == find){
                         return i;
@@ -406,7 +406,7 @@ int find(char *str, char find){
 
 
 
-int startswith(char *str, char element){
+int startswith(string str, char element){
         if(str[0] == element){
                 return 0;
         }
@@ -415,7 +415,7 @@ int startswith(char *str, char element){
 
 
 
-char *read_file(char *filename){
+string read_file(string filename){
         FILE *fptr = fopen(filename, "rb");
 
         if(!fptr){
@@ -426,7 +426,7 @@ char *read_file(char *filename){
         long fptr_size = ftell(fptr);
         fseek(fptr, 0, SEEK_SET);
 
-        char *buffer = (char*)malloc(fptr_size + 1);
+        string buffer = (char*)malloc(fptr_size + 1);
 
         if(!buffer){
                 raise_exception(AllocationError, __FILE__, __LINE__);
@@ -442,14 +442,14 @@ char *read_file(char *filename){
 
 
 /*
-size_t str_split(char ***array, char *str, const char *del) {
-    	char *token;
+size_t str_split(string **array, string str, const string del) {
+    	string token;
     	size_t i = 0;
 
     	token = strtok(str, del);
 
     	while(token != NULL) {
-        	*array = realloc(*array, sizeof(char *) * (i + 1));
+        	*array = realloc(*array, sizeof(string ) * (i + 1));
 
                 if(!array){
                         raise_exception(ReallocationError, __FILE__, __LINE__);
@@ -464,7 +464,7 @@ size_t str_split(char ***array, char *str, const char *del) {
 
 
 /*
-void printSplit(char ***split, char *str, const char del){
+void printSplit(string **split, string str, const char del){
    	size_t count = str_split(&split, del);
 
     	for(size_t i = 0; i < count; i++) {
@@ -478,9 +478,9 @@ void printSplit(char ***split, char *str, const char del){
 
 
 
-void str_split(char *str, const char *del)
+void str_split(string str, const string del)
 {
-    char *token;
+    string token;
 
     token = strtok(str, del);
 
@@ -499,7 +499,7 @@ int ord(char c) {
 
 
 
-int isin(char *str, char value){
+int isin(string str, char value){
     for(int i = 0; i < strlen(str); i++){
         if(str[i] == value){
             return 0;
@@ -652,7 +652,7 @@ int d_any(double *arr, int size){
 }
 
 
-int str_islower(char *str){
+int str_islower(string str){
     int total = 0;
     int whitespaces = 0;
     int str_size = strlen(str);
@@ -675,7 +675,7 @@ int str_islower(char *str){
 }
 
 
-int str_isupper(char *str){
+int str_isupper(string str){
     int total = 0;
     int whitespaces = 0;
     int str_size = strlen(str);
@@ -698,7 +698,7 @@ int str_isupper(char *str){
 }
 
 
-int str_isspace(char *str){
+int str_isspace(string str){
     int whitespaces = 0;
     int str_size = strlen(str);
 
@@ -716,7 +716,7 @@ int str_isspace(char *str){
 }
 
 
-int str_isalpha(char *str)
+int str_isalpha(string str)
 {
     int total = 0;
     int whitespaces = 0;
@@ -747,7 +747,7 @@ int str_isalpha(char *str)
 }
 
 
-int str_isdigit(char *str)
+int str_isdigit(string str)
 {
     int total = 0;
     int whitespaces = 0;
@@ -778,7 +778,7 @@ int str_isdigit(char *str)
 }
 
 
-void str_splitlines(char *str)
+void str_splitlines(string str)
 {
     str_split(str, " ");
 }
