@@ -1,4 +1,4 @@
-#include "./headers/help.h"
+#include "./headers/cnpy_help.h"
 
 
 void help(void){
