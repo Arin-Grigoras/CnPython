@@ -1,5 +1,5 @@
-#ifndef EXCEPTIONS_H
-#define EXCEPTIONS_H
+#ifndef CNPY_EXCEPTIONS_H
+#define CNPY_EXCEPTIONS_H
 
 
 #include "./cnpython.h"
@@ -18,4 +18,4 @@
 void raise_exception(int except, char *file, int line);
 
 
-#endif //EXCEPTIONS_H
+#endif //CNPY_EXCEPTIONS_H

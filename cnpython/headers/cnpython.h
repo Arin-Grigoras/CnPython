@@ -18,9 +18,9 @@
 
 //Own includes
 
-#include "./exceptions.h"
-#include "./print.h"
-#include "./help.h"
+#include "./cnpy_exceptions.h"
+#include "./cnpy_print.h"
+#include "./cnpy_help.h"
 
 
 //#define tuple(...)
@@ -118,13 +118,7 @@ struct Function{
 };*/
 
 
-/*New datatypes*/
-int new_Int(int integer);
-char *new_String(char *str);
-double new_Double(double dou);
-float new_Float(float flot);
-char new_Char(char chr);
-long new_Long(long lon);
+
 
 
 

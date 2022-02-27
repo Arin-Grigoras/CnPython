@@ -1,7 +1,7 @@
 //Header guard start
 
-#ifndef PRINT_H
-#define PRINT_H
+#ifndef CNPY_PRINT_H
+#define CNPY_PRINT_H
 
 
 #include "./cnpython.h"
@@ -29,7 +29,7 @@ void print_str_arr(char **arr, int size);
 void print(char *format, ...);
 
 
-#endif //PRINT_H
+#endif //CNPY_PRINT_H
 
 
 //Header guard end
