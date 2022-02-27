@@ -1,7 +1,7 @@
 #include "./headers/cnpython.h"
 
 
-
+/*new_'datatype'() functions*/
 int new_Int(int integer){
         return integer;
 }
@@ -31,6 +31,7 @@ long new_Long(long lon){
         return lon;
 }
 
+/*new 'datatype'() functions end*/
 
 
 long long bin(long decimal){
@@ -105,7 +106,7 @@ long oct(long dec){
 
 
 /*Power function*/
-double pow(double base, double exponent){
+double cnp_pow(double base, double exponent){
         double result = 1;
         for(exponent; exponent > 0; exponent--){
                 result *= base;
@@ -702,7 +703,7 @@ int str_islower(char *str){
             total++;
         }elif(isupper(str[i])){
             return False;
-        }else{
+        }elif(isspace(str[i])){
             whitespaces++;
         }
     }
@@ -723,9 +724,9 @@ int str_isupper(char *str){
     for(int i = 0; i < str_size; i++){
         if(isupper(str[i])){
             total++;
-        }else if(islower(str[i])){
+        }elif(islower(str[i])){
             return False;
-        }else{
+        }elif(isspace(str[i])){
             whitespaces++;
         }
     }
@@ -735,4 +736,22 @@ int str_isupper(char *str){
     }
 
     return False;
+}
+
+
+int str_isspace(char *str){
+    int whitespaces = 0;
+    int str_size = strlen(str);
+
+    for(int i = 0; i < str_size; i++){
+        if(isspace(str[i])){
+            whitespaces++;
+        }elif(isspace(str[i] == 0)){
+            return False;
+        }
+    }
+
+    if(whitespaces == str_size){
+        return True;
+    }
 }
