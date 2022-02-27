@@ -677,7 +677,7 @@ int str_islower(char *str){
         }
     }
 
-    if(total = str_size - whitespaces){
+    if(total == str_size - whitespaces){
         return True;
     }
 
@@ -726,7 +726,8 @@ int str_isspace(char *str){
 }
 
 
-int str_isalpha(char *str){
+int str_isalpha(char *str)
+{
     int total = 0;
     int whitespaces = 0;
     int str_size = strlen(str);
@@ -748,7 +749,7 @@ int str_isalpha(char *str){
     }
 
 
-    if(total = str_size - whitespaces){
+    if(total == str_size - whitespaces){
         return True;
     }
 
@@ -756,7 +757,8 @@ int str_isalpha(char *str){
 }
 
 
-int str_isdigit(char *str){
+int str_isdigit(char *str)
+{
     int total = 0;
     int whitespaces = 0;
     int str_size = strlen(str);
@@ -777,10 +779,16 @@ int str_isdigit(char *str){
         }
     }
 
-    if(total = str_size - whitespaces){
+    if(total == str_size - whitespaces){
         return True;
     }
 
 
     return False;
+}
+
+
+char **str_splitlines(char *str)
+{
+    
 }
