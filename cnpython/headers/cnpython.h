@@ -86,10 +86,9 @@
 #define RUN 32
 
 //MAX and MIN macro functions
-/*
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
-*/
+
 
 
 /*STRUCTS*/
@@ -193,7 +192,7 @@ enum types{
 /*Returns a number from -1 to 10 depending on the variable data type*/
 #define type(X) \
         _Generic(X, \
-                        int: TYPE_INT, \ 
+                        int: TYPE_INT, \
                         char: TYPE_CHAR, \
                         char*: TYPE_STRING, \
                         char**: TYPE_STRING_ARR, \
