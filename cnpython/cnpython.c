@@ -802,5 +802,5 @@ float rsqrt(float number){
 
 
 float hypot(float a, float b){
-    return (a*a) + (b*b);
+    return sqrt((a*a) + (b*b));
 }
