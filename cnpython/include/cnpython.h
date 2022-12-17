@@ -21,13 +21,7 @@
 #include "./cnpy_exceptions.h"
 #include "./cnpy_print.h"
 #include "./cnpy_help.h"
-#include "./datatypes_implementation/cnpy_default_dt.h"
-#include "./datatypes_implementation/binarySearchTree/cnpy_BinarySearchTree.h"
-#include "./datatypes_implementation/Common/node.h"
-#include "./datatypes_implementation/dict/cnpy_dict.h"
-#include "./datatypes_implementation/dict/cnpy_entry.h"
-#include "./datatypes_implementation/list/cnpy_list.h"
-#include "./datatypes_implementation/tuple/cnpy_tuple.h"
+
 
 
 
@@ -347,6 +341,9 @@ extern int str_isdigit(string str);
 
 /*Splits the string at line breaks and returns an array*/
 extern void str_splitlines(string str);
+
+/*Returns the inverse square root*/
+extern float rsqrt(float number);
 
 #endif /*CYTHON_H*/
 /*End of header guard*/

@@ -20,19 +20,12 @@ int main(void){
     return 0;
 }
 
-
-int int_abs(int number){
-    if(number < 0){
-        return -number;
-    }
-
-    return number;
+int int_abs(int number)
+{
+    return (((number) < (0)) ? (-number) : (number));
 }
 
-double double_abs(double number){
-    if(number < 0){
-        return -number;
-    }
-
-    return number;
+double double_abs(double number)
+{
+    return (((number) < (0)) ? (-number) : (number));
 }

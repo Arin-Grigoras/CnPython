@@ -1,4 +1,4 @@
-#include "./headers/cnpython.h"
+#include "./include/cnpython.h"
 
 
 
@@ -50,7 +50,7 @@ void hex(long n)
         print("0x");
 
         for(int j = i - 1; j >= 0; j--){
-                printf("%c", hexaDeciNum[j]);
+            printf("%c", hexaDeciNum[j]);
         }
 
         free(hexaDeciNum);
@@ -65,9 +65,9 @@ long oct(long dec){
         int i = 1;
 
         while (dec != 0){
-                octalNumber += (dec % 8) * i;
-                dec /= 8;
-                i *= 10;
+            octalNumber += (dec % 8) * i;
+            dec /= 8;
+            i *= 10;
         }
 
         return octalNumber;
@@ -78,7 +78,7 @@ long oct(long dec){
 double power(double base, double exponent){
         double result = 1;
         for(exponent; exponent > 0; exponent--){
-                result *= base;
+            result *= base;
         }
 
         return result;
@@ -88,7 +88,7 @@ double power(double base, double exponent){
 
 int factorial(int n){
         if(n == 0){
-                return 1;
+            return 1;
         }
 
         return n * factorial(n - 1);
@@ -569,21 +569,13 @@ char chr(int ascii) {
     return (char) ascii;
 }
 
-
+/*returns absolute value*/
 int i_abs(int number){
-    if(number < 0){
-        return -number;
-    }
-
-    return number;
+    return (((number) < (0)) ? (-number) : (number));
 }
 
 double d_abs(double number){
-    if(number < 0){
-        return -number;
-    }
-
-    return number;
+    return (((number) < (0)) ? (-number) : (number));
 }
 
 
@@ -781,4 +773,29 @@ int str_isdigit(string str)
 void str_splitlines(string str)
 {
     str_split(str, " ");
+}
+
+
+
+float CNPY_rsqrt(float number){
+    long i;
+    float x2, y;
+    const float threehalfs = 1.5F;
+
+    x2 = number * 0.5F;
+    y = number;
+    i = *(long*)&y;
+    i = 0x5f3759df - (i >> 1);
+    y = *(float*)&i;
+    y = y * (threehalfs - (x2 * y * y));
+
+
+    return y;
+}
+
+
+
+float rsqrt(float number){
+    float result = CNPY_rsqrt(number);
+    return result;
 }
