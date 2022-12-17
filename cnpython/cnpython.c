@@ -799,3 +799,8 @@ float rsqrt(float number){
     float result = CNPY_rsqrt(number);
     return result;
 }
+
+
+float hypot(float a, float b){
+    return (a*a) + (b*b);
+}

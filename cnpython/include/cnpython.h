@@ -345,5 +345,11 @@ extern void str_splitlines(string str);
 /*Returns the inverse square root*/
 extern float rsqrt(float number);
 
+
+/*Returns a^2 + b^2*/
+extern float hypot(float a, float b);
+
+
+
 #endif /*CYTHON_H*/
 /*End of header guard*/
