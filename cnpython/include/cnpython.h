@@ -349,6 +349,8 @@ extern float rsqrt(float number);
 /*Returns a^2 + b^2*/
 extern float hypot(float a, float b);
 
+/*returns num with value of first and sign of second*/
+extern int copysign(int x, int y);
 
 
 #endif /*CYTHON_H*/

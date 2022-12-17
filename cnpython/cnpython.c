@@ -804,3 +804,13 @@ float rsqrt(float number){
 float hypot(float a, float b){
     return sqrt((a*a) + (b*b));
 }
+
+
+int copysign(int x, int y){
+    if(y >= 0){
+        return +x;
+    }
+    else{
+        return -x;   
+    }
+}
