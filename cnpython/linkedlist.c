@@ -61,3 +61,27 @@ int ll_pop_first(node_t **head){
     return retval;
 }
 
+int ll_pop_last(node_t *head)
+{
+    int retval = 0;
+
+    // if there's only one element in the list it removes it
+    if (head->next == NULL){
+        retval = head->data;
+        free(head);
+        return retval;
+    }
+
+    /* get to the second to last node in the list */
+
+    node_t *c = head;
+    while(c->next->next != NULL){
+        c = c->next;
+    }
+    
+    /* now current points to the second to last item of the list, so let's remove current->next */
+    retval = c->next->data;
+    free(c->next);
+    c->next = NULL;
+    return retval;
+}
