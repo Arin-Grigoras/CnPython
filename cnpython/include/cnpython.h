@@ -13,6 +13,7 @@
 #include <errno.h>
 #include <stdint.h>
 #include <ctype.h>
+#include <limits.h>
 
 
 
@@ -80,14 +81,18 @@
     #define None ((void*)0) //basically NULL
 #endif //None
 
-//Really bad class definition but howdy, it works
-#define class struct
+#ifndef class
+    #define class struct
+#endif
 
 
-
-#define RUN 32
+//used in timsort function in 'cnpython.c'
+#ifndef RUN
+    #define RUN 32
+#endif //RUN
 
 //MAX and MIN macro functions
+
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
 
