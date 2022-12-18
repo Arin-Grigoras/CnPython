@@ -115,3 +115,26 @@ int remove_by_index(node_t **head, int n){
 
     return retval;
 }
+
+void ll_remove_by_value(node_t **head, int val)
+{
+    node_t *temp = *head, *prev;
+
+    if (temp != NULL && temp->data == val){
+        *head = temp->next;
+        free(temp);
+    }
+
+    while (temp != NULL && temp->data != val){
+        prev = temp;
+        temp = temp->next;
+    }
+
+    if (temp == NULL){
+        return;
+    }
+
+    prev->next = temp->next;
+
+    free(temp);
+}

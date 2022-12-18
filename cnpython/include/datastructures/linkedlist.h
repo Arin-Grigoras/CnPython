@@ -17,7 +17,8 @@ void ll_push_end(node_t *head, int data);
 void ll_push_beg(node_t **head, int data);
 int ll_pop_first(node_t **head);
 int ll_pop_last(node_t *head);
-int ll_pop_index(node_t **head, int n);
+int ll_remove_by_index(node_t **head, int n);
+void ll_remove_by_value(node_t **head, int val);
 
 
 
