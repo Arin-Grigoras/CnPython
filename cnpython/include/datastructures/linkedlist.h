@@ -5,11 +5,12 @@
 
 #include "../cnpython.h"
 
-
-class node_t{
+/*struct*/
+typedef class node{
     int data;
     struct node* next;
-};
+}node_t;
+
 
 void ll_print(node_t *head);
 void ll_push_end(node_t *head, int data);
