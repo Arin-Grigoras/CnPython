@@ -5,7 +5,7 @@
 void ll_print(node_t *head){
     node_t *c = head;
     //looping through the linked list
-    while(c != NULL){
+    while(c isnt None){
         //printing every node's data
         print("%d", c->data);
         c = c->next;
@@ -18,7 +18,7 @@ void ll_print(node_t *head){
 void ll_push_end(node_t *head, int data){
     node_t *c = head;
     //looping to the end of the linked list
-    while(c->next != NULL){
+    while(c->next isnt None){
         c = c->next;
     }
 
@@ -26,7 +26,7 @@ void ll_push_end(node_t *head, int data){
     c->next = (node_t*)malloc(sizeof(node_t));
     //sets the new node's value
     c->next->data = data;
-    c->next->next = NULL;
+    c->next->next = None;
 }
 
 
@@ -46,10 +46,10 @@ void ll_push_beg(node_t **head, int data){
 /*pop from the linked list*/
 int ll_pop_first(node_t **head){
     int retval = -1;
-    node_t *next_node = NULL;
+    node_t *next_node = None;
 
-    //if head == NULL
-    if(!*head){
+    //if head is None
+    if(not *head){
         return -1;
     }
 
@@ -66,7 +66,7 @@ int ll_pop_last(node_t *head)
     int retval = 0;
 
     // if there's only one element in the list it removes it
-    if (head->next == NULL){
+    if (head->next is None){
         retval = head->data;
         free(head);
         return retval;
@@ -75,14 +75,14 @@ int ll_pop_last(node_t *head)
     /* get to the second to last node in the list */
 
     node_t *c = head;
-    while(c->next->next != NULL){
+    while(c->next->next isnt None){
         c = c->next;
     }
 
     /* now current points to the second to last item of the list, so let's remove current->next */
     retval = c->next->data;
     free(c->next);
-    c->next = NULL;
+    c->next = None;
     return retval;
 }
 
@@ -90,20 +90,20 @@ int ll_pop_last(node_t *head)
 int remove_by_index(node_t **head, int n){
     int retval = -1;
     node_t *c = *head;
-    node_t *temp = NULL;
+    node_t *temp = None;
 
-    if(n == 0){
+    if(n is 0){
         return ll_pop_first(head);
     }
 
     for(int i = 0; i < n-1; i++){
-        if(c->next == NULL){
+        if(c->next is None){
             return -1;
         }
         c = c->next;
     }
 
-    if(c->next == NULL){
+    if(c->next is None){
         return -1;
     }
 
@@ -116,21 +116,20 @@ int remove_by_index(node_t **head, int n){
     return retval;
 }
 
-void ll_remove_by_value(node_t **head, int val)
-{
+void ll_remove_by_value(node_t **head, int val){
     node_t *temp = *head, *prev;
 
-    if (temp != NULL && temp->data == val){
+    if (temp isnt None && temp->data is val){
         *head = temp->next;
         free(temp);
     }
 
-    while (temp != NULL && temp->data != val){
+    while (temp isnt None && temp->data isnt val){
         prev = temp;
         temp = temp->next;
     }
 
-    if (temp == NULL){
+    if (temp is None){
         return;
     }
 
