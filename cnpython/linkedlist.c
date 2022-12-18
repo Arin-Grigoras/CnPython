@@ -78,10 +78,40 @@ int ll_pop_last(node_t *head)
     while(c->next->next != NULL){
         c = c->next;
     }
-    
+
     /* now current points to the second to last item of the list, so let's remove current->next */
     retval = c->next->data;
     free(c->next);
     c->next = NULL;
+    return retval;
+}
+
+
+int remove_by_index(node_t **head, int n){
+    int retval = -1;
+    node_t *c = *head;
+    node_t *temp = NULL;
+
+    if(n == 0){
+        return ll_pop_first(head);
+    }
+
+    for(int i = 0; i < n-1; i++){
+        if(c->next == NULL){
+            return -1;
+        }
+        c = c->next;
+    }
+
+    if(c->next == NULL){
+        return -1;
+    }
+
+    temp = c->next;
+    retval = temp->data;
+    c->next = temp->next;
+    free(temp);
+
+
     return retval;
 }
