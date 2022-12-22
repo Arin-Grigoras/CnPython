@@ -142,17 +142,9 @@ string str(int number){
 
 
 /*Converts a string to an integer*/
-int _int(string str){
-        return atoi(str);
-}
-
-
-int _bool(int n){
-        if(n == 0){
-                return False;
-        }
-        return True;
-}
+int _int(string str){        return atoi(str);		}
+//converts from int to bool
+int _bool(int n){	return n == 0 ? False : True;	}
 
 
 
@@ -539,7 +531,7 @@ int isin(string str, char value){
 
 
 int rem(int a, int b){
-        return a - (a/b*b);
+        return a % b;
 }
 
 
