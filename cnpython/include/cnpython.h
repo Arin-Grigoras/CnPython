@@ -187,7 +187,7 @@ extern long long bin(long decimal, ...);
 extern string hex(long n, ...);
 
 /*Converts any decimal value to an octal value*/
-extern long oct(long dec);
+extern long oct(long dec, ...);
 
 /*Power function*/
 extern double power(double base, double exponent);

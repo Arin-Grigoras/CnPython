@@ -77,15 +77,25 @@ string hex(long n, ...)
 
 
 /*Converts any decimal value to an octal value*/
-long oct(long dec){
+long oct(long dec, ...){
         long octalNumber = 0;
         int i = 1;
+	va_list valist;
 
         while (dec != 0){
             octalNumber += (dec % 8) * i;
             dec /= 8;
             i *= 10;
         }
+
+
+	va_start(valist, dec);
+
+	if(va_arg(valist, int) == True){
+		print("0o%ld", octalNumber);
+	}
+
+	va_end(valist);
 
         return octalNumber;
 }
