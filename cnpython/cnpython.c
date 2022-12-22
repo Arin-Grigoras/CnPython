@@ -2,17 +2,26 @@
 
 
 
-
-long long bin(long decimal){
+//the second arguments value determines the binary notation should be printed or not
+long long bin(long decimal, ...){
         long long bin = 0;
         int rem, i = 1, step = 1;
-        while (decimal != 0) {
+        va_list valist;
+	while (decimal != 0) {
                 rem = decimal % 2;
                 decimal /= 2;
                 bin += rem * i;
                  i *= 10;
          }
-        print("0b");
+
+	va_start(valist, decimal);
+
+	if(va_arg(valist, int) == True){
+		print("0b%lld", bin);
+	}
+
+	va_end(valist);
+
         return bin;
 }
 
@@ -20,21 +29,23 @@ long long bin(long decimal){
 
 
 
+
 /*Converts any decimal value to a hexadecimal value*/
-void hex(long n)
+string hex(long n, ...)
 {
         string hexaDeciNum = (char*)malloc(sizeof(char) * 100);
+	va_list valist;
 
         if(!hexaDeciNum){
                 raise_exception(AllocationError, __FILE__, __LINE__);
         }
- 
+
         int i = 0;
         while (n != 0) {
                 int temp = 0;
- 
+
                 temp = n % 16;
- 
+
                 if (temp < 10) {
                         hexaDeciNum[i] = temp + 48;
                         i++;
@@ -43,17 +54,23 @@ void hex(long n)
                         hexaDeciNum[i] = temp + 55;
                         i++;
                 }
- 
+
                         n = n / 16;
                 }
 
-        print("0x");
+	va_start(valist, n);
 
-        for(int j = i - 1; j >= 0; j--){
-            printf("%c", hexaDeciNum[j]);
-        }
+	if(va_arg(valist, int) == True){
+		print("0x");
+		for(int j = i - 1; j >= 0; j--){
+			print("%c", hexaDeciNum[j]);
+		}
+		free(hexaDeciNum);
+	}
 
-        free(hexaDeciNum);
+	else{
+		return hexaDeciNum;
+	}
 
 }
 
@@ -61,7 +78,7 @@ void hex(long n)
 
 /*Converts any decimal value to an octal value*/
 long oct(long dec){
-        long octalNumber = 0; 
+        long octalNumber = 0;
         int i = 1;
 
         while (dec != 0){
@@ -165,7 +182,7 @@ string input(string str){
                 }
         }
 
-        return buffer; 
+        return buffer;
 }
 
 
@@ -178,12 +195,12 @@ int* reversed(int* arr, int size){
                 raise_exception(AllocationError, __FILE__, __LINE__);
         }
 
-        for(int c = size - 1, d = 0; c >= 0; c--, d++){     
+        for(int c = size - 1, d = 0; c >= 0; c--, d++){
                 return_arr[d] = arr[c];
         }
 
         return return_arr;
-        
+
 }
 
 
@@ -214,7 +231,7 @@ double min(double numbers[], int arrlen) {
 }
 
 
- 
+
 /*Used in tim sort algorithm*/
 void insertionSort(int arr[], int left, int right)
 {
@@ -230,7 +247,7 @@ void insertionSort(int arr[], int left, int right)
         arr[j+1] = temp;
     }
 }
- 
+
 /*Merge function is used in the tim sort algorithm*/
 void merge(int arr[], int l, int m, int r){
     int len1 = m - l + 1, len2 = r - m;
@@ -239,11 +256,11 @@ void merge(int arr[], int l, int m, int r){
         left[i] = arr[l + i];
     for (int i = 0; i < len2; i++)
         right[i] = arr[m + 1 + i];
- 
+
     int i = 0;
     int j = 0;
     int k = l;
- 
+
     while (i < len1 and j < len2)
     {
         if (left[i] <= right[j])
@@ -258,15 +275,15 @@ void merge(int arr[], int l, int m, int r){
         }
         k++;
     }
- 
-    
+
+
     while (i < len1)
     {
         arr[k] = left[i];
         k++;
         i++;
     }
- 
+
 
     while (j < len2)
     {
@@ -275,26 +292,26 @@ void merge(int arr[], int l, int m, int r){
         j++;
     }
 }
- 
+
 
 /*Tim Sort algorithm*/
 void timSort(int arr[], int n){
-     
+
     for (int i = 0; i < n; i+=RUN)
-        insertionSort(arr, i, MIN((i+RUN-1), 
+        insertionSort(arr, i, MIN((i+RUN-1),
                                     (n-1)));
- 
-    for (int size = RUN; size < n; 
+
+    for (int size = RUN; size < n;
                              size = 2*size)
     {
-         
-        for (int left = 0; left < n; 
+
+        for (int left = 0; left < n;
                              left += 2*size)
         {
             int mid = left + size - 1;
-            int right = MIN((left + 2*size - 1), 
+            int right = MIN((left + 2*size - 1),
                                             (n-1));
- 
+
 
               if(mid < right)
                 merge(arr, left, mid, right);
@@ -314,7 +331,7 @@ int* sorted(int *arr, int size){
 
 
 /*Gets the sum of all the elements in an array*/
-long sum(int *arr, int size){  
+long sum(int *arr, int size){
         long sum = 0;
 
         for(int i = 0; i < size; i++){
@@ -334,9 +351,9 @@ int str_len(string str){
 
 /*Counts how many times the program found a character in a given string*/
 int str_count(string str, char find){
-        
+
         int count = 0;
-        
+
         for(int i = 0; i < strlen(str); i++){
                 if(str[i] == find){
                         count++;
@@ -375,7 +392,7 @@ string join(string str1, string str2){
 
 string replace(string str, char find, char repl){
         string ret_string = (char*)malloc(sizeof(str));
-        
+
         if(!ret_string){
                 raise_exception(AllocationError, __FILE__, __LINE__);
         }
@@ -538,7 +555,7 @@ int *copy(int *arr, int *dest, int size){
 
 int arr_count(int *arr, int value, int size){
     int count = 0;
-    
+
     for(int i = 0; i < size; i++){
         if(arr[i] == value){
             count++;
@@ -587,7 +604,7 @@ int all(int *arr, int size){
         /*if(arr[i] == NULL){
             total_nulls++;
         }*/
-        
+
         if(arr[i] != 0){
             total_trues++;
         }

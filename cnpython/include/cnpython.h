@@ -53,7 +53,7 @@
 
 //python 'isnt' logical operator implemented in C
 #ifndef isnt
-    #define isnt != 
+    #define isnt !=
 #endif //isnt
 
 //supposed to be pythons 'in' operator but it's not really good implemented
@@ -181,10 +181,10 @@ struct Function{
 
 
 /*Converts any decimal value to a binary value*/
-extern long long bin(long decimal);
+extern long long bin(long decimal, ...);
 
 /*Converts any decimal value to a hexadecimal value*/
-extern void hex(long n);
+extern string hex(long n, ...);
 
 /*Converts any decimal value to an octal value*/
 extern long oct(long dec);
@@ -222,14 +222,14 @@ extern double max (double numbers[], int arrlen);
 
 /*Returns the smallest element in an array*/
 extern double min(double numbers[], int arrlen);
- 
+
 
 /*Used in tim sort algorithm*/
 extern void insertionSort(int arr[], int left, int right);
- 
+
 /*Merge function is used in the tim sort algorithm*/
 extern void merge(int arr[], int l, int m, int r);
- 
+
 /*Tim Sort algorithm*/
 extern void timSort(int arr[], int n);
 
