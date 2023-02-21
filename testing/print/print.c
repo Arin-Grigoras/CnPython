@@ -97,12 +97,3 @@ void print(char *format, ...){
 }
 
 
-
-int main(void){
-	char *str = "world";
-	int n = 12;
-	int arr[] = {1, 2};
-	double arr2[] = {1.2, 2.2};
-	long arr3[] = {12, 12};
-	print("Hello %s %d %t %e %g", str, n, arr, arr2, arr3);
-}
