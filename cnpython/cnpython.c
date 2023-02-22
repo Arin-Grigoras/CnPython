@@ -807,6 +807,7 @@ float CNPY_rsqrt(float number){
     i = 0x5f3759df - (i >> 1);
     y = *(float*)&i;
     y = y * (threehalfs - (x2 * y * y));
+    y = y * (threehalfs) - (x2 * y * y);
 
 
     return y;
