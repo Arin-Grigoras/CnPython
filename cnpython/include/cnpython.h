@@ -14,6 +14,9 @@
 #include <stdint.h>
 #include <ctype.h>
 #include <limits.h>
+//not previously included for `ptrdiff_t`
+#include <stddef.h>
+#include <stdbool.h>
 
 
 
@@ -346,6 +349,95 @@ extern int str_isdigit(string str);
 
 /*Splits the string at line breaks and returns an array*/
 extern void str_splitlines(string str);
+
+/**
+ * @brief Find the substring inside a string. Supporting search zone feature. Set negative value at end offset for end of the string
+ * 
+ * @param str The given string
+ * @param value The substring to be found inside str
+ * @param start The offset of when to start
+ * @param end The end range
+ * @return ptrdiff_t Return the index of the first character of the substring when found. Else, -1 is returned
+ */
+extern ptrdiff_t find_str(string str, string value, const unsigned int start, const int end);
+
+/**
+ * @brief Works just like the find method. However, an error is thrown when not found then given value
+ */
+extern ptrdiff_t index_str(string str, string value, const unsigned int start, const int end);
+
+/**
+ * @brief Justify the given string to the right of a new string
+ * 
+ * @param str The string to be justified
+ * @param len The len of the fill offset and the string itself
+ * @param fill The character to be filled
+ * @return string The new string that right-justified the old string
+ */
+extern string rjust(string str, const size_t len, const char fill);
+
+
+/**
+ * @brief Justify the given string to the right of a new string
+ * 
+ * @param str The string to be justified
+ * @param len The len of the fill offset and the string itself
+ * @param fill The character to be filled
+ * @return string The new string that right-justified the old string
+ */
+extern string rjust(string str, const size_t len, const char fill);
+
+/**
+ * @brief Justify the given string to the left of a new string
+ * 
+ * @param str The string to be justified
+ * @param len The len of string and the fill offset
+ * @param fill The character to be filled
+ * @return string The new string that left-justified the old string
+ */
+extern string ljust(string str, const size_t len, const char fill);
+
+/**
+ * @brief Basically right-justified but auto fill with zero (ascii value) instead 
+ * 
+ * @param str The string to be justified
+ * @param len The len of string and the fill offset
+ * @return char* The new string that right-justified and fills with zero
+ */
+extern char* zfill(string str, size_t len);
+
+
+//Some more checking method for string
+
+extern bool isspace_str(string str);
+extern bool isprintable_str(string str);
+extern bool isdigit_str(string str);
+extern bool isidentifier_str(string str);
+
+/**
+ * @brief Trim of the heading and the trailing of any character that met inside the strip_content
+ * 
+ * @param str The string to be trimmed
+ * @param strip_content The delimiter for trimming
+ * @return string The new string that got trimmed the heading and the trailing
+ */
+extern string strip(string str, string strip_content);
+
+/**
+ * @brief Check whether the string is of title type (First character of all word must be uppercase)
+ * 
+ * @param str The string to be checked
+ * @return true When the string obeys the rule, false when the string not obeys the rule or only contains number
+ */
+extern bool istitle(string str);
+
+/**
+ * @brief Turn the string to become title
+ * 
+ * @param str The string to be transform
+ * @return string The new string that is obeys title form
+ */
+extern string title(string str);
 
 /*Returns the inverse square root*/
 extern float rsqrt(float number);

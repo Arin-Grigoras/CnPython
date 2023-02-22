@@ -16,7 +16,7 @@ int stack_isEmpty(snode_t *root){
 }
 
 void stack_push(snode_t **root, int data){
-    snode_t *stack_node = struct_newNode(data);
+    snode_t *stack_node = stack_newNode(data);
     stack_node->next = *root;
     *root = stack_node;
 
