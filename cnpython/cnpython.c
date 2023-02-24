@@ -807,9 +807,310 @@ float CNPY_rsqrt(float number){
     i = 0x5f3759df - (i >> 1);
     y = *(float*)&i;
     y = y * (threehalfs - (x2 * y * y));
+    y = y * (threehalfs) - (x2 * y * y);
 
 
     return y;
+}
+
+
+/**
+ * @brief Find the substring inside a string. Supporting search zone feature. Set negative value at end offset for end of the string
+ * 
+ * @param str The given string
+ * @param value The substring to be found inside str
+ * @param start The offset of when to start
+ * @param end The end range
+ * @return ptrdiff_t Return the index of the first character of the substring when found. Else, -1 is returned
+ */
+ptrdiff_t find_str(string str, string value, const unsigned int start, const int end){
+    if (end > 0){
+        size_t strLen = strlen(str);
+        string copy = malloc(strLen);
+
+        strncpy(copy, str, strLen);
+        //Since we only find until "end" index
+        copy[end] = '\0';
+        
+        char* strstrRet = strstr(copy + start, value);
+        return strstrRet == NULL ? -1 : strstrRet - copy;
+    }
+
+    char* strstrRet = strstr(str + start, value);
+    return strstrRet == NULL ? -1 : strstrRet - str;
+}
+
+/**
+ * @brief Works just like the find method. However, an error is thrown when not found then given value
+ */
+ptrdiff_t index_str(string str, string value, const unsigned int start, const int end){
+    char* strstrRet;
+    if (end > 0){
+        size_t strLen = strlen(str);
+        string copy   = malloc(strLen);
+
+        strncpy(copy, str, strLen);
+        //Since we only find until "end" index
+        copy[end] = '\0';
+        
+        strstrRet = strstr(copy + start, value);
+        if (strstrRet == NULL){
+            fprintf(stderr, "ValueError: substring not found, given: \"%s\"\n", value);
+            exit(1);
+        }
+    }else{
+        strstrRet = strstr(str + start, value);
+        if (strstrRet == NULL){
+            fprintf(stderr, "ValueError: substring not found, given: \"%s\"\n", value);
+            exit(1);
+        }
+    }
+
+    return strstrRet - str;
+}
+
+/**
+ * @brief Justify the given string to the right of a new string
+ * 
+ * @param str The string to be justified
+ * @param len The len of the fill offset and the string itself
+ * @param fill The character to be filled
+ * @return string The new string that right-justified the old string
+ */
+string rjust(string str, const size_t len, const char fill){
+    size_t strLen = strlen(str);
+    if (len < strLen)
+        return NULL;
+
+    string ret    = malloc(len + 1);
+
+    if (!ret){
+        fprintf(stderr, "ERROR: rjust function: Can't allocating memory");
+        exit(1);
+    }
+    memset(ret, fill, len - strLen);
+    memcpy(ret + (len - strLen), str, strLen);
+
+    return ret;
+}
+
+
+/**
+ * @brief Justify the given string to the left of a new string
+ * 
+ * @param str The string to be justified
+ * @param len The len of string and the fill offset
+ * @param fill The character to be filled
+ * @return string The new string that left-justified the old string
+ */
+string ljust(string str, const size_t len, const char fill){
+    size_t strLen = strlen(str);
+    if (len < strLen)
+        return NULL;
+
+    string ret    = malloc(len + 1);
+
+    if (!ret){
+        fprintf(stderr, "ERROR: ljust function: Can't allocating memory");
+        exit(1);
+    }
+
+    memcpy(ret, str, strLen);
+    memset(ret + strLen, fill, len - strLen);
+
+    return ret;
+}
+
+
+/**
+ * @brief Basically right-justified but auto fill with zero (ascii value) instead 
+ * 
+ * @param str The string to be justified
+ * @param len The len of string and the fill offset
+ * @return char* The new string that right-justified and fills with zero
+ */
+char* zfill(string str, size_t len){
+    string ret = rjust(str, len, '0');
+
+    return ret;
+}
+
+
+//Some more checking method for string
+
+bool isspace_str(string str){
+    bool ret = true;
+    size_t i = 0;
+
+    while (str[i] != '\0'){
+        if (str[i] != ' ')
+            ret = false;
+        i++;
+    }
+
+    return ret;
+}
+
+bool isprintable_str(string str){
+    size_t strLen = strlen(str);
+    bool ret = true;
+
+    for (int i = 0; i < strLen; i++)
+        if (!isprint(str[i]))
+            ret = false;
+
+    return ret;
+}
+
+bool isdigit_str(string str){
+    size_t strLen = strlen(str);
+    bool ret = true;
+
+    for (int i = 0; i < strLen; i++)
+        if (!isdigit(str[i]))
+            ret = false;
+
+    return ret;
+}
+
+bool isidentifier_str(string str){
+    size_t strLen = strlen(str);
+    bool ret = true;
+
+    if (isdigit(str[0]))
+        return false;
+    else{
+        for (int i = 0; i < strLen; i++){
+            if (str[i] == ' ')
+                return false;
+
+            if (!isalnum(str[i]) && str[i] != '_')
+                ret = false;
+        }
+    }
+    return ret;
+}
+
+
+/**
+ * @brief Trim of the heading and the trailing of any character that met inside the strip_content
+ * 
+ * @param str The string to be trimmed
+ * @param strip_content The delimiter for trimming
+ * @return string The new string that got trimmed the heading and the trailing
+ */
+string strip(string str, string strip_content){
+    size_t start  = 0;
+    size_t strLen = strlen(str);
+    size_t end    = strLen - 1;
+    string ret   = calloc(strLen, 1);
+    int    i;
+
+    //Trim the leading
+    while (strchr(strip_content, str[end]))
+        end--;
+    
+    //Trim the trailing
+    while (strchr(strip_content, str[start]))
+        start++;
+
+    //Start copying data
+    for (i = 0; i <= end - start; i++)
+        ret[i] = str[i + start];
+    
+    ret[i] = '\0';
+
+    ret = realloc(ret, strlen(ret) + 1);
+
+    return ret;
+}
+
+
+/**
+ * @brief Check whether the string is of title type (First character of all word must be uppercase)
+ * 
+ * @param str The string to be checked
+ * @return true When the string obeys the rule, false when the string not obeys the rule or only contains number
+ */
+bool istitle(string str){
+    bool           ret    = true;
+    bool           char_flag = false; //Check the case where there's no character and only number
+    size_t         len    = strlen(str);
+    size_t         offsetS = 0;
+    size_t         offsetE = 0;
+    string         token;
+
+    while (offsetE < len){
+        while (isalpha(str[offsetE])){
+            offsetE++;
+            char_flag = true;
+        }
+
+        // Reach here when the delimiter was found
+        for (int i = 0; i < offsetE - offsetS; i++){
+                if (isalpha((str + offsetS)[i])){
+                    if (i > 0){
+                        if (!islower((str + offsetS)[i]))
+                            return false;       
+                    }   
+                    else{
+                        if (!isupper((str + offsetS)[i]))
+                            return false;
+                    }
+                }
+        }
+
+        while (!isalpha(str[offsetE]))
+            offsetE++;
+
+        offsetS = offsetE;
+    }
+
+    return char_flag ? ret : false;
+}
+
+/**
+ * @brief Turn the string to become title
+ * 
+ * @param str The string to be transform
+ * @return string The new string that is obeys title form
+ */
+string title(string str){ 
+    size_t len   = strlen(str);
+    size_t i     = 0;
+    string ret    = malloc(len + 1);
+
+    if (!ret){
+        fprintf(stderr, "ERROR: title function: Can't allocating memory");
+        exit(1);
+    }
+    strncpy(ret, str, len);
+
+    while (i < len){
+        //Cycle through the non-alpha character
+        while (!isalpha(str[i])){
+            i++;
+
+            if (i >= len)
+                goto CHECK_DONE;
+        }
+        
+        //And upper case the first one
+        ret[i] = toupper(ret[i]);
+
+        //Then cycle through until meeting a non-alpha again
+        while (isalpha(str[i])){
+            i++;
+
+            if (i >= len)
+                goto CHECK_DONE;
+        }
+        i++;
+    }
+
+    
+    CHECK_DONE:
+    return ret;    
 }
 
 
