@@ -413,14 +413,18 @@ string replace(string str, char find, char repl){
 
 
 
-int find(string str, char find){
-        for(int i = 0; i < strlen(str); i++){
-                if(str[i] == find){
-                        return i;
-                }
-        }
+int str_find(const string str, char find){
+    if(str == NULL){
+        raise_exception(NullError, __FILE__, __LINE__);
+    }
 
-        return -1;
+    for(int i = 0; *str!=0; i++){
+        if(*str == find){
+            return i;
+        }
+    }
+
+    return -1;
 }
 
 

@@ -19,5 +19,9 @@ void raise_exception(int except, char *file, int line){
                 print("FileOpenError %s %d", file, line);
                 exit(FileOpenError);
         }
+        else if(except == NullError){
+                printf("NullError %s %d", file, line);
+                exit(NullError);
+        }
 
 }

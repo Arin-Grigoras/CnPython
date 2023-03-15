@@ -267,7 +267,7 @@ extern string str_join(string str1, string str2);
 extern string str_replace(string str, char find, char repl);
 
 /*Returns the index of the character if it was found in the string, if not it returns -1*/
-extern int str_find(string str, char find);
+extern int str_find(const string str, char find);
 
 /*Returns 0 if the string starts with the specified element*/
 extern int str_startswith(string str, char element);

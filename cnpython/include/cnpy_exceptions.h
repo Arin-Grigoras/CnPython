@@ -11,7 +11,7 @@
 #define MemoryError 3
 #define ZeroDivisionError 4
 #define FileOpenError 5
-
+#define NullError 6
 
 
 

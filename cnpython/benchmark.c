@@ -104,11 +104,16 @@ static void bm_test(){
     sleep(1);
 }
 
+static void bm_find(){
+    str_find("hello world", 'l');
+}
 
 int main(void){
     benchmark(bm_bin, NULL, 100, 100);
 
     benchmark(bm_power, NULL, 100, 100);
-    benchmark(bm_test, NULL, 2, 2);
+    benchmark(bm_find, NULL, 100, 100);
+    
+    // benchmark(bm_test, NULL, 2, 2);
     return 0;
 }
