@@ -10,6 +10,7 @@ using namespace std;
 #endif
 
 #include "./include/cnpython.h"
+#include <unistd.h>
 
 /**
  * Gets the current time.
@@ -17,19 +18,19 @@ using namespace std;
  **/
 double get_current_time();
 
-double benchmark(void func(void *, size_t), void *data, size_t numBytes, int numBenchmarks)
+long double benchmark(void func(void *, size_t), void *data, size_t numBytes, int numBenchmarks)
 {
-	double mean_time = 0.0; /** The time the benchmark ran. **/
-	double total_time = 0.0; /** The total time. **/
+	long double mean_time = 0.0; /** The time the benchmark ran. **/
+	long double total_time = 0.0; /** The total time. **/
 	int i;
 
 	printf("----------------------------\nStarting benchmark...\n----------------------------\n");
 
 	for(i = 0; i < numBenchmarks; ++i)
 	{
-		double start_time = 0.0; /** The time the benchmark started. **/
-		double end_time = 0.0; /** The time the benchmark ended. **/
-		double bench_time = 0.0; /** end_time - start_time **/
+		long double start_time = 0.0; /** The time the benchmark started. **/
+		long double end_time = 0.0; /** The time the benchmark ended. **/
+		long double bench_time = 0.0; /** end_time - start_time **/
 
 		/* Start the benchmark. */
 		start_time = get_current_time();
@@ -51,13 +52,13 @@ double benchmark(void func(void *, size_t), void *data, size_t numBytes, int num
 			mean_time = bench_time;
 
 		/* Print the current step. */
-		printf("Completed step %d\tTime spent: %fms\n", i + 1, bench_time * 1000);
+		printf("Completed step %d\tTime spent: %Lfms\n", i + 1, bench_time * 1000);
 	}
 
 	/* Gobal time spent in the benchmark. */
 	printf("----------------------------\nEnded benchmark!\n");
-	printf("Total time spent: %fms\n", total_time * 1000);
-	printf("Mean time spent: %fms\n----------------------------\n", mean_time * 1000);
+	printf("Total time spent: %Lfms\n", total_time * 1000);
+	printf("Mean time spent: %Lfms\n----------------------------\n", mean_time * 1000);
 
 	/* Return the mean time. */
 	return mean_time;
@@ -94,8 +95,20 @@ static void bm_bin(){
 }
 
 
+static void bm_power(){
+    power(100, 5);
+}
+
+
+static void bm_test(){
+    sleep(1);
+}
+
+
 int main(void){
     benchmark(bm_bin, NULL, 100, 100);
 
+    benchmark(bm_power, NULL, 100, 100);
+    benchmark(bm_test, NULL, 2, 2);
     return 0;
 }
