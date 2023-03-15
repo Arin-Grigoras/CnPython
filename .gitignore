@@ -5,3 +5,5 @@ github
 main-tests.c
 src/
 build/
+/cnpython/benchmark
+/cnpython/a.out

@@ -10,7 +10,7 @@ CFLAGS = -lm
 BUILD = ./build/something
 
 all:
-	${CC} src/main.c ${SRC} -lm -o ${BUILD}
+	${CC} ${SRC} -lm -o ${BUILD}
 
 test: ./template.c
 	gcc ./template.c cnpython.c -o ./template.o -lm

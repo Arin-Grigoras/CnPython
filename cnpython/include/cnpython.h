@@ -34,35 +34,41 @@
 
 /*DEFINES*/
 
-//python 'and' logical operator implemented in C
-#ifndef and
-    #define and &&
-#endif //and
+/*
+    `and`, `or`, `not` are all operators in C++ and
+    will give an error if trying to compile
+*/
+#ifndef __cplusplus
+    //python 'and' logical operator implemented in C 
+    #ifndef and
+        #define and &&
+    #endif //and
 
-//python 'or' logical operator implemented in C
-#ifndef or
-    #define or ||
-#endif //or
+    //python 'or' logical operator implemented in C
+    #ifndef or
+        #define or ||
+    #endif //or
 
-//python 'not' logical operator implemented in C
-#ifndef not
-    #define not !
-#endif //not
+    //python 'not' logical operator implemented in C
+    #ifndef not
+        #define not !
+    #endif //not
 
-//python 'is' logical operator implemented in C
-#ifndef is
-    #define is ==
-#endif //is
+    //python 'is' logical operator implemented in C
+    #ifndef is
+        #define is ==
+    #endif //is
 
-//python 'isnt' logical operator implemented in C
-#ifndef isnt
-    #define isnt !=
-#endif //isnt
+    //python 'isnt' logical operator implemented in C
+    #ifndef isnt
+        #define isnt !=
+    #endif //isnt
 
-//supposed to be pythons 'in' operator but it's not really good implemented
-#ifndef in
-    #define in ,
-#endif //in
+    //supposed to be pythons 'in' operator but it's not really good implemented
+    #ifndef in
+        #define in ,
+    #endif //in
+#endif
 
 //else if in python
 #ifndef elif
@@ -184,7 +190,7 @@ struct Function{
 
 
 /*Converts any decimal value to a binary value*/
-extern long long bin(long decimal, ...);
+extern unsigned long long bin(long decimal, ...);
 
 /*Converts any decimal value to a hexadecimal value*/
 extern string hex(long n, ...);

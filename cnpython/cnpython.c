@@ -3,10 +3,10 @@
 
 
 //the second arguments value determines the binary notation should be printed or not
-long long bin(long decimal, ...){
-        long long bin = 0;
-        int rem, i = 1, step = 1;
-        va_list valist;
+unsigned long long bin(long decimal, ...){
+    unsigned long long bin = 0;
+    int rem, i = 1, step = 1;
+    va_list valist;
 	while (decimal != 0) {
                 rem = decimal % 2;
                 decimal /= 2;
