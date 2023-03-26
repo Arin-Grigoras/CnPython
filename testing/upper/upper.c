@@ -1,25 +1,27 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
+#include "../../cnpython/include/cnpython.h"
 
 /*
-    FAILED AS WELL
+    Worked now :)))
 */
 
-char *upper(char *str){
-    char *upper;
+string upper(string str){
+    size_t strLen = strlen(str);
+    string upperStr = malloc(strLen);
+    //Or: char upperStr[strLen];
 
-    strcpy(upper, str);
+    strcpy(upperStr, str);
 
-    while(*upper){
-        *upper = toupper((unsigned char) *upper);
-        upper++;
-    }
+    for (size_t i = 0; i < strLen; i++)
+        upperStr[i] = toupper(upperStr[i]);
 
-    return upper;
+    return upperStr;
 }
 
 int main(void){
-    char *str = "hello world";
+    string str = "hello world";
     printf("%s", upper(str));
 }
